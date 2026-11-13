@@ -1,0 +1,42 @@
+# NHẬT KÝ THEO DÕI LỖI & TIẾN ĐỘ DỰ ÁN TLS1_VOICELIVE
+
+## 1. Lịch Sử Khắc Phục Lỗi & Tối Ưu
+- **2026-11-08 (Antigravity):**
+  - **Khảo sát file thực thi:** Xác định file `.exe` chạy chính thức là `TLS1 VoiceLive.exe` (121.6 MB, bản Self-Contained Single-File .NET 9).
+  - **Dọn dẹp dung lượng:** Đã xóa bản sao lưu cũ `TLS1 VoiceLive - Copy.exe`, giải phóng 127 MB ổ cứng.
+  - **Chuẩn hóa thư mục:** Chuyển đổi `publish2` thành `Release_App`, dọn dẹp thư mục thừa. Cấu trúc dự án tối giản và khoa học.
+  - **Quy chuẩn công ty:** Đã thiết lập hoàn chỉnh `PLAN_TLS1_VOICELIVE.md` và `ISSUE_TRACKER.md` trong `.agents/`.
+  - **Đồng bộ GitHub:** Đẩy toàn bộ mã nguồn lên repository `https://github.com/traderlaso1wolfcapital-workspace/TLS1_VoiceLive.git`.
+  - **Sửa lỗi Scraper YouTube:** Cài đặt `playwright` + chromium/ffmpeg và `beautifulsoup4` cho Python 3.13 trên máy, khôi phục tính năng cào cmt live YouTube 100%.
+  - **Sửa lỗi phát âm thanh (Silent Audio):** Bổ sung đầy đủ bộ thư viện `NAudio 2.3.0` vào build dependency, khắc phục lỗi mất tiếng khi đọc cmt.
+  - **Tính năng mới:** Bổ sung tính năng **"Trả lời comment AI (9Router Mac Mini)"**:
+    + Thêm ô tích checkbox trên giao diện WPF.
+    + Kết nối API 9Router trên máy Mac Mini M1 (`http://192.168.100.154:20128/v1/chat/completions`).
+    + Cập nhật API Key mới chuyên dụng: `sk-94f37e79b2d930fe-3qwzqr-6541de82` (Tên: `TLS1_VoiceLive`).
+    + Tự động sinh câu trả lời ngắn gọn, tự nhiên và dùng TTS phát âm thanh đọc ngay sau khi đọc cmt của người xem.
+    + Rebuild và cập nhật bản chạy hoàn chỉnh `Release_App\TLS1 VoiceLive.exe`.
+
+## 2. Danh Sách Task Đang Chờ Xử Lý
+- [x] Rà soát file `.exe` hoàn chỉnh cho Windows.
+- [x] Tối ưu hóa & phân bổ lại cấu trúc thư mục dự án tối giản nhất.
+- [x] Đẩy mã nguồn dự án lên GitHub `traderlaso1wolfcapital-workspace/TLS1_VoiceLive`.
+- [x] Khắc phục lỗi cào cmt live YouTube do thiếu thư viện Python.
+- [x] Khắc phục lỗi không phát ra âm thanh do thiếu driver `NAudio 2.3.0`.
+- [x] Bổ sung Checkbox & tính năng "Trả lời comment AI" kết nối 9Router server Mac Mini M1.
+- [x] Cập nhật API Key mới `sk-94f37e79b2d930fe-3qwzqr-6541de82` (TLS1_VoiceLive).
+- [x] Đổi tone màu giao diện chuẩn autotrader.fun Dark Slate `#0F121C` / `#1C2333`.
+- [x] Khắc phục triệt để lỗi Not Responding khi click Mute âm thanh.
+- [x] Gộp thanh trạng thái và CHAT LOG làm 1 khối duy nhất.
+- [x] Chuyển đổi Cài đặt thành dạng Tab View, di chuyển nút Cài đặt xuống thanh tab.
+- [x] Tách biệt 3 cụm Clone - ElevenLabs Key - Slang, hiện trực tiếp ô nhập ElevenLabs Key.
+- [x] Tích hợp AI 9Router tự động chuẩn hóa Teencode & Slang thông minh trước khi phát âm.
+- [x] Tạo file công cụ `zzPush_To_GitHub.py` chuẩn TLS1 riêng cho dự án TLS1.VoiceLive.
+- [x] Khắc phục triệt để lỗi ấn Dừng bị thoát app (bọc try-catch toàn bộ StopAsync, RelayCommand và thêm global DispatcherUnhandledException handler).
+- [x] Thêm delay 5 giây cho mỗi lần đọc comment và trả lời AI qua hàng đợi SemaphoreSlim.
+- [x] Nâng tốc độ giọng đọc Edge TTS lên 1.3x trong cả code và appsettings.json.
+- [x] Định dạng đọc từng số riêng lẻ trong tên người xem (ví dụ Giang11241 -> "Giang một một hai bốn một").
+- [x] Thêm khung cấu hình Prompt trả lời AI (9Router Mac Mini) trực quan trên giao diện với nút "↺ Khôi phục mặc định".
+- [x] Khóa chặt chu trình tuần tự: Đọc cmt -> Chờ AI trả lời & đọc xong âm thanh -> Nghỉ 5s rồi mới cho phép đọc câu cmt tiếp theo.
+- [x] Tích hợp nút chọn ngôn ngữ (🌐 EN / VI / ZH / JA / KO) đồng bộ toàn diện: Chuyển đổi toàn bộ ngôn ngữ giao diện + Tự động nạp bộ giọng đọc Edge TTS bản xứ tương ứng (Jenny/Guy, Xiaoxiao/Yunxi, Nanami/Keita, SunHi/InJoon, Hoài My/Nam Minh) + Tự động chuyển đổi System Prompt AI 9Router đối đáp theo từng ngôn ngữ.
+- [x] Khắc phục triệt để lỗi XamlParseException khi khởi động (`Cannot add instance of type 'String' to a collection of type 'UIElementCollection'`): Dọn dẹp các dòng thuộc tính XAML bị rớt ngoài thẻ `<TextBlock>` trong `MainWindow.xaml`.
+- [x] Rebuild và xuất bản file .exe mới nhất vào `Release_App\TLS1 VoiceLive.exe`.

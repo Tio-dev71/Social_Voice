@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Cài đặt tiện ích Social Stream Ninja cho YouTube và TikTok.">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="../icons/favicon.ico" type="image/x-icon">
+  <title>Cài đặt tiện ích</title>
+
+  <style>
+    .section {
+      border-top: 1px #ddd solid;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    .setting {
+      margin-bottom: 4px;
+    }
+    label {
+      display: block;
+    }
+    input.text {
+      display: block;
+      padding: 4px;
+      border: 1px #ccc solid;
+      border-radius: 4px;
+      width: 90%;
+    }
+    input.checkbox {
+      float: left;
+    }
+    button {
+      padding: 6px;
+      border: 1px #ccc solid;
+      border-radius: 4px;
+    }
+    hr {
+      border: 0;
+      border-top: 1px #ccc solid;
+    }
+  </style>
+</head>
+<body>
+
+  <p>Cài đặt tiện ích Social Stream Ninja (YouTube &amp; TikTok)</p>
+  <form>
+    <div class="section">
+      <div class="setting">
+        <label>Mã kênh phiên (Session Channel ID)</label>
+        <div>Mã kênh kết nối phiên duy nhất; hãy giữ bí mật mã này.</div>
+        <input type="text" class="text" id="streamID">
+      </div>
+	  <div class="setting">
+        <label>Mật khẩu phiên (Session Password)</label>
+        <div>Mật khẩu dùng để mã hóa dữ liệu tin nhắn khi truyền tải.</div>
+        <input type="text" class="text" id="password">
+      </div>
+    </div>
+    <button id="savedButton" style="cursor:pointer" type="submit">Lưu cài đặt</button>
+  </form>
+
+  <script src="options.js"></script>
+
+</body>
+
+</html>

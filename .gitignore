@@ -1,0 +1,28 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# .NET Build outputs
+[Bb]in/
+[Oo]bj/
+build_bin/
+build_obj/
+*.user
+*.suo
+*.sln.docstates
+publish/
+
+# Python cache & virtual environment
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+ENV/
+
+# Browser profiles & temporary data
+/tmp/social_voice_*
+tiktok_profile/
+*.log
+crash_log.txt
