@@ -1431,24 +1431,68 @@
 				}
 			}
 
-			body.vanilla.notcompactmode.inlinechat .highlight-chat {
-				display: block;
+			body.inlinechat .highlight-chat,
+			body.vanilla.notcompactmode.inlinechat .highlight-chat,
+			body:not(.twoLines) #output:not(.largeavatar):not(.compactmode):not(.horizontal) .highlight-chat:not(.twoLines):not(.largeavatar):not(.split-row) {
+				display: block !important;
+				line-height: 1.4 !important;
+				padding-top: var(--padding-rows, 4px) !important;
+				padding-bottom: var(--padding-rows, 4px) !important;
+				word-break: break-word !important;
+				overflow-wrap: anywhere !important;
 			}
 
+			body.inlinechat .highlight-chat > .queueid,
 			body.vanilla.notcompactmode.inlinechat .highlight-chat > .queueid {
-				display: inline-block;
+				display: inline-block !important;
 			}
 
-			body.vanilla.notcompactmode.inlinechat .highlight-chat > .hl-name {
-				min-width: unset;
+			body.inlinechat .highlight-chat > .hl-name,
+			body.vanilla.notcompactmode.inlinechat .highlight-chat > .hl-name,
+			body:not(.twoLines) #output:not(.largeavatar):not(.compactmode):not(.horizontal) .highlight-chat:not(.twoLines):not(.largeavatar):not(.split-row) > .hl-name {
+				display: inline !important;
+				min-width: unset !important;
+				max-width: unset !important;
+				width: auto !important;
+				margin: 0 4px 0 0 !important;
+				vertical-align: baseline !important;
+				white-space: normal !important;
+				line-height: inherit !important;
 			}
 
-			body.vanilla.notcompactmode.inlinechat .highlight-chat > .hl-message:not(.bubble) {
-				display: inline;
-				padding-left: 0;
+			body.inlinechat .highlight-chat > .hl-message:not(.bubble),
+			body.vanilla.notcompactmode.inlinechat .highlight-chat > .hl-message:not(.bubble),
+			body:not(.twoLines) #output:not(.largeavatar):not(.compactmode):not(.horizontal) .highlight-chat:not(.twoLines):not(.largeavatar):not(.split-row) > .hl-message:not(.bubble) {
+				display: inline !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				vertical-align: baseline !important;
+				white-space: normal !important;
+				line-height: inherit !important;
 			}
 
-			body.vanilla.notcompactmode.inlinechat.alignright .highlight-chat {
+			body.inlinechat .highlight-chat > .hl-message > .hl-content,
+			body.vanilla.notcompactmode.inlinechat .highlight-chat > .hl-message > .hl-content,
+			body:not(.twoLines) #output:not(.largeavatar):not(.compactmode):not(.horizontal) .highlight-chat:not(.twoLines):not(.largeavatar):not(.split-row) > .hl-message > .hl-content {
+				display: inline !important;
+				vertical-align: baseline !important;
+				line-height: inherit !important;
+			}
+
+			body.inlinechat .highlight-chat > .hl-profile-pic,
+			body.inlinechat .highlight-chat > img.icon,
+			body.inlinechat .highlight-chat > .source-icon,
+			body:not(.twoLines) #output:not(.largeavatar):not(.compactmode):not(.horizontal) .highlight-chat:not(.twoLines):not(.largeavatar):not(.split-row) > .hl-profile-pic,
+			body:not(.twoLines) #output:not(.largeavatar):not(.compactmode):not(.horizontal) .highlight-chat:not(.twoLines):not(.largeavatar):not(.split-row) > img.icon,
+			body:not(.twoLines) #output:not(.largeavatar):not(.compactmode):not(.horizontal) .highlight-chat:not(.twoLines):not(.largeavatar):not(.split-row) > .source-icon {
+				display: inline-block !important;
+				vertical-align: middle !important;
+				margin-right: 5px !important;
+				margin-top: -2px !important;
+			}
+
+			body.vanilla.notcompactmode.inlinechat.alignright .highlight-chat,
+			body.inlinechat.alignright .highlight-chat {
 				text-align: right;
 			}
 
@@ -3665,8 +3709,9 @@
 			var applyCustomActions = false;
 			var showsource = true;
 			var compactmode = false;
-			// Specialized layouts own their row structure; inline flow only applies to the standard layout.
-			var inlinechat = urlParams.has("inline") &&
+			// Specialized layouts own their row structure; inline flow applies by default to standard layout.
+			var inlinechat = !urlParams.has("noinline") &&
+				urlParams.get("inline") !== "false" &&
 				!urlParams.has("compact") &&
 				!urlParams.has("overlaymode") &&
 				!urlParams.has("horizontal") &&
@@ -12817,7 +12862,7 @@
 								chatname = '<div dir="' + textDirection + '" ' + nameColor + ' class="hl-name' + splitMode + '">' + chatname + afterName + "</div>";
 							}
 						} else {
-							chatname = '<div dir="' + textDirection + '" ' + nameColor + ' class="hl-name' + splitMode + '">' + chatbadges + chatname + (inlinechat ? afterName : "") + "</div>";
+							chatname = '<div dir="' + textDirection + '" ' + nameColor + ' class="hl-name' + splitMode + '">' + chatbadges + chatname + afterName + "</div>";
 						}
 					} else if (specialMessage && compactmode) {
 						chatname = '<div dir="' + textDirection + '" class="hl-name' + splitMode + '"></div>';
