@@ -1,0 +1,159 @@
+name: Build & Release Social Voice
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Phiên bản phát hành (Release tag, ví dụ: v1.0.0)'
+        required: false
+        default: 'v1.0.0'
+
+permissions:
+  contents: write
+
+jobs:
+  package-windows:
+    name: 🪟 Đóng gói Windows Portable
+    runs-on: windows-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Chuẩn bị tệp đóng gói Windows
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist/Social_Voice_Windows
+          Copy-Item -Recurse -Force -Path Social_Stream dist/Social_Voice_Windows/
+          Copy-Item -Recurse -Force -Path TLS1_VoiceLive dist/Social_Voice_Windows/
+          Copy-Item -Force -Path start.bat dist/Social_Voice_Windows/
+          Copy-Item -Force -Path start.sh dist/Social_Voice_Windows/
+          Copy-Item -Force -Path README.md dist/Social_Voice_Windows/
+          Compress-Archive -Path dist/Social_Voice_Windows/* -DestinationPath dist/Social_Voice-Windows-Portable.zip
+
+      - name: Lưu trữ artifact Windows
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-portable
+          path: dist/Social_Voice-Windows-Portable.zip
+
+  package-macos:
+    name: 🍎 Đóng gói macOS (DMG & ZIP)
+    runs-on: macos-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Chuẩn bị tệp và tạo DMG & ZIP
+        run: |
+          mkdir -p dist/Social_Voice_macOS
+          cp -R Social_Stream dist/Social_Voice_macOS/
+          cp -R TLS1_VoiceLive dist/Social_Voice_macOS/
+          cp -R Social_Voice.app dist/Social_Voice_macOS/
+          cp start.command dist/Social_Voice_macOS/
+          cp start.sh dist/Social_Voice_macOS/
+          cp README.md dist/Social_Voice_macOS/
+
+          chmod +x dist/Social_Voice_macOS/start.command
+          chmod +x dist/Social_Voice_macOS/start.sh
+          chmod +x dist/Social_Voice_macOS/Social_Voice.app/Contents/MacOS/*
+
+          # Tạo file ZIP cho macOS
+          cd dist
+          zip -r Social_Voice-macOS.zip Social_Voice_macOS/
+
+          # Tạo file cài đặt DMG cho macOS
+          hdiutil create -volname "Social Voice" -srcfolder Social_Voice_macOS -ov -format UDZO Social_Voice-macOS.dmg
+          cd ..
+
+      - name: Lưu trữ artifact macOS
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-packages
+          path: |
+            dist/Social_Voice-macOS.dmg
+            dist/Social_Voice-macOS.zip
+
+  package-linux:
+    name: 🐧 Đóng gói Linux (TAR.GZ)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Chuẩn bị tệp và tạo TAR.GZ
+        run: |
+          mkdir -p dist/Social_Voice_Linux
+          cp -r Social_Stream dist/Social_Voice_Linux/
+          cp -r TLS1_VoiceLive dist/Social_Voice_Linux/
+          cp start.sh dist/Social_Voice_Linux/
+          cp README.md dist/Social_Voice_Linux/
+
+          chmod +x dist/Social_Voice_Linux/start.sh
+
+          cd dist
+          tar -czvf Social_Voice-Linux.tar.gz Social_Voice_Linux/
+          cd ..
+
+      - name: Lưu trữ artifact Linux
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-package
+          path: dist/Social_Voice-Linux.tar.gz
+
+  create-release:
+    name: 🚀 Xuất bản GitHub Release
+    needs: [package-windows, package-macos, package-linux]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Tải về toàn bộ artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+
+      - name: Xác định Release Tag
+        id: release_meta
+        run: |
+          if [ -n "${{ github.event.inputs.tag_name }}" ]; then
+            TAG="${{ github.event.inputs.tag_name }}"
+          elif [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            TAG="${GITHUB_REF#refs/tags/}"
+          else
+            TAG="v1.0.0"
+          fi
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+      - name: Tạo GitHub Release và đính kèm gói cài đặt
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_meta.outputs.tag }}
+          name: "Social Voice ${{ steps.release_meta.outputs.tag }} - Bản phát hành chính thức"
+          draft: false
+          prerelease: false
+          files: |
+            release-assets/Social_Voice-Windows-Portable.zip
+            release-assets/Social_Voice-macOS.dmg
+            release-assets/Social_Voice-macOS.zip
+            release-assets/Social_Voice-Linux.tar.gz
+          body: |
+            ## 🎙️ Social Voice Standalone (YouTube & TikTok Live)
+            Ứng dụng đọc bình luận livestream tự động tích hợp giọng đọc AI tiếng Việt, giản lược tối đa chỉ giữ lại **YouTube** và **TikTok**.
+
+            ### 📦 Danh sách tải về (Downloads)
+            | Nền tảng (Platform) | Tệp cài đặt / Chạy ngay (Downloads) | Hướng dẫn chạy |
+            | :--- | :--- | :--- |
+            | **Windows** | [📥 Social_Voice-Windows-Portable.zip](https://github.com/${{ github.repository }}/releases/download/${{ steps.release_meta.outputs.tag }}/Social_Voice-Windows-Portable.zip) | Giải nén -> Nhấp đúp `start.bat` |
+            | **macOS (Apple Silicon & Intel)** | [📥 Social_Voice-macOS.dmg](https://github.com/${{ github.repository }}/releases/download/${{ steps.release_meta.outputs.tag }}/Social_Voice-macOS.dmg) / [.zip](https://github.com/${{ github.repository }}/releases/download/${{ steps.release_meta.outputs.tag }}/Social_Voice-macOS.zip) | Mở DMG kéo vào Applications hoặc nhấp đúp `start.command` |
+            | **Linux** | [📥 Social_Voice-Linux.tar.gz](https://github.com/${{ github.repository }}/releases/download/${{ steps.release_meta.outputs.tag }}/Social_Voice-Linux.tar.gz) | Giải nén -> Chạy `./start.sh` |
+
+            ### ✨ Các điểm nổi bật:
+            - **Chuyên biệt cho YouTube & TikTok:** Đã loại bỏ hoàn toàn hơn 160 nền tảng dư thừa, tối ưu dung lượng và tốc độ.
+            - **100% Tiếng Việt:** Giao diện điều khiển, cài đặt âm thanh, bộ lọc, dock chat và cơ chế đọc đều được dịch tiếng Việt chuẩn xác.
+            - **Tích hợp Voice AI tiếng Việt (TLS1 VoiceLive):** Tự động phát âm bình luận của khán giả theo thời gian thực.
+            - **Chạy ngay 1-Click:** Không cần cài đặt phức tạp, tải về mở là chạy ngay.

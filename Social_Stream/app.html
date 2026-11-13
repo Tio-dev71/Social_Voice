@@ -301,28 +301,57 @@
             color: var(--accent-red);
         }
 
-        /* Empty state */
-        .empty-sources {
-            background-color: rgba(16, 42, 67, 0.4);
-            border: 2px dashed rgba(255,255,255,0.25);
-            border-radius: 10px;
-            padding: 40px 20px;
-            text-align: center;
+        /* Welcome card */
+        .welcome-card {
+            background-color: #101c2c;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 32px 28px;
+            margin-top: 10px;
             color: #d9e2ec;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
         }
 
-        .empty-sources h3 {
-            font-size: 17px;
-            margin-bottom: 8px;
-            color: #fff;
+        .welcome-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+            text-align: center;
         }
 
-        .empty-sources p {
-            font-size: 13.5px;
+        .welcome-desc {
+            font-size: 14.5px;
             color: #bcccdc;
-            max-width: 440px;
-            margin: 0 auto;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 24px auto;
+            line-height: 1.6;
+        }
+
+        .welcome-callout {
+            background-color: #162a3f;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 16px;
+            border-radius: 4px;
+            font-size: 13.5px;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .welcome-notice {
+            background-color: #242217;
+            border: 1px solid #997404;
+            border-left: 4px solid #ffc107;
+            padding: 14px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #fef3c7;
             line-height: 1.5;
+        }
+
+        .welcome-notice b {
+            color: #fde047;
         }
 
         /* ── COLUMN 3: RIGHT PANEL (POPUP.HTML SETTINGS) ── */
@@ -419,13 +448,17 @@
     <header id="window-menubar">
         <div class="menu-title">
             <img src="./sources/images/socialstream.png" width="18" height="18" alt="Logo">
-            Social Voice Standalone (YouTube & TikTok)
+            Social Voice Desktop
         </div>
         <div class="menu-items">
+            <span class="menu-item active" style="color: #fff; font-weight: 600; border-bottom: 2px solid #3b82f6; padding-bottom: 2px;">🎭 Nguồn &amp; Cài đặt</span>
             <span class="menu-item" onclick="openOBSDock()">📺 Mở Dock Chat</span>
             <span class="menu-item" onclick="testComment()">🧪 Thử Voice AI</span>
             <span class="menu-item" onclick="clearAllSources()">🗑️ Xóa nguồn</span>
             <span class="menu-item" onclick="window.location.reload()">🔄 Tải lại</span>
+        </div>
+        <div style="margin-left: auto; font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 6px;">
+            <span>🇻🇳 Tiếng Việt</span>
         </div>
     </header>
 
@@ -460,8 +493,14 @@
         <!-- CỘT 2: NGUỒN PHÁT ĐÃ THÊM (CENTER WORKSPACE) -->
         <main id="center-workspace">
             <div class="workspace-header">
-                <h1 class="workspace-title">Social Voice Standalone</h1>
-                <span style="font-size: 12.5px; color: #9fb3c8;">Tích hợp Voice AI Tiếng Việt cho YouTube & TikTok</span>
+                <div>
+                    <h1 class="workspace-title">Social Voice Standalone</h1>
+                    <span style="font-size: 13px; color: #cbd5e1;">Tích hợp Voice AI Tiếng Việt cho YouTube &amp; TikTok</span>
+                </div>
+                <div style="text-align: right; font-size: 12px; color: #cbd5e1; line-height: 1.5; background: rgba(0,0,0,0.25); padding: 6px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                    <div>Engine Desktop: <b style="color: #60a5fa;">v1.0.0</b></div>
+                    <div>Hạt nhân Voice AI: <b style="color: #4ade80;">TLS1 VoiceLive</b></div>
+                </div>
             </div>
 
             <div class="workspace-subtitle">Nguồn phát đã thêm:</div>
@@ -531,9 +570,15 @@
 
             if (sources.length === 0) {
                 list.innerHTML = `
-                    <div class="empty-sources">
-                        <h3>Chưa có nguồn livestream nào được thêm</h3>
-                        <p>Nhấp vào các nút <b>YouTube</b> hoặc <b>TikTok</b> ở cột bên trái để thêm kênh hoặc video của bạn, sau đó ấn <b>Kích hoạt</b> để bắt đầu đọc chat tự động!</p>
+                    <div class="welcome-card">
+                        <h2 class="welcome-title">Chào mừng bạn đến với Social Voice! 🎙️</h2>
+                        <p class="welcome-desc">Hợp nhất các luồng bình luận trực tiếp từ <b>YouTube</b> và <b>TikTok</b> vào một giao diện tập trung và tự động phát âm giọng đọc AI tiếng Việt trên máy tính của bạn.</p>
+                        <div class="welcome-callout">
+                            💡 Sau khi bạn thêm nguồn phát đầu tiên từ cột bên trái, bảng hướng dẫn này sẽ tự động ẩn đi và thay thế bằng danh sách kênh đang hoạt động.
+                        </div>
+                        <div class="welcome-notice">
+                            <b>⚠️ Hướng dẫn nhanh:</b> Nhấp vào các nút <b>YouTube Kênh</b>, <b>YouTube Video</b> hoặc <b>TikTok @Username</b> ở cột bên trái để thêm link livestream, sau đó nhấn <b>Kích hoạt nguồn</b> để bắt đầu đón nhận chat và phát giọng đọc AI!
+                        </div>
                     </div>
                 `;
                 return;
