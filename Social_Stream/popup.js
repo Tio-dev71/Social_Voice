@@ -12557,10 +12557,25 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 	
 	document.getElementById("disableButton").onclick = function(event){
 		event.stopPropagation()
-		chrome.runtime.sendMessage({cmd: "setOnOffState", data: {value: !isExtensionOn}}, function (response) {
-			chrome.runtime.lastError;
-			update(response);
-		});
+		if (typeof chrome !== "undefined" && chrome.runtime && typeof chrome.runtime.sendMessage === "function") {
+			chrome.runtime.sendMessage({cmd: "setOnOffState", data: {value: !isExtensionOn}}, function (response) {
+				chrome.runtime.lastError;
+				if (response) update(response);
+			});
+		} else {
+			isExtensionOn = !isExtensionOn;
+			if (isExtensionOn) {
+				document.body.classList.add("extension-enabled");
+				document.body.classList.remove("extension-disabled");
+				miniTranslate(document.getElementById("disableButtonText"), "popup-service-active", "⚡ Service Active");
+				document.getElementById("extensionState").checked = true;
+			} else {
+				document.body.classList.remove("extension-enabled");
+				document.body.classList.add("extension-disabled");
+				miniTranslate(document.getElementById("disableButtonText"), "popup-service-disabled", "🔌 Service Disabled");
+				document.getElementById("extensionState").checked = false;
+			}
+		}
 		return false;
 	};
 	if (!ssapp) {
@@ -14636,34 +14651,69 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 	let retryCount = 0;
 	const MAX_RETRIES = 60; // 30 seconds at 500ms intervals
 
+	function tryLocalFallbackSettings() {
+		if (popupStartupSettingsHydrated) return;
+		log("Hydrating popup from local standalone fallback");
+		let savedSettings = {};
+		try { savedSettings = JSON.parse(localStorage.getItem("settings") || "{}"); } catch(e){}
+		let savedSession = localStorage.getItem("streamID") || localStorage.getItem("ssninja_stream_id") || "voice";
+		let fallbackResponse = {
+			streamID: savedSession,
+			state: true,
+			settings: savedSettings
+		};
+		hydratePopupFromStartupSettings(fallbackResponse);
+	}
+
+	setTimeout(tryLocalFallbackSettings, 350);
+
 	let initialSetup = setInterval(()=>{
 		if (retryCount++ > MAX_RETRIES) {
 			clearInterval(initialSetup);
 			log("getSettings gave up after max retries");
+			tryLocalFallbackSettings();
+			return;
+		}
+		if (typeof chrome === "undefined" || !chrome.runtime || typeof chrome.runtime.sendMessage !== "function") {
+			tryLocalFallbackSettings();
+			clearInterval(initialSetup);
 			return;
 		}
 		log("pop up asking main for settings yet again..");
-		chrome.runtime.sendMessage({cmd: "getSettings"}, (response) => {
-			chrome.runtime.lastError;
-			log("getSettings response",response);
-			if (!hydratePopupFromStartupSettings(response)){
-				// keep polling
-			} else {
-				clearInterval(initialSetup);
-			}
-		});
+		try {
+			chrome.runtime.sendMessage({cmd: "getSettings"}, (response) => {
+				chrome.runtime.lastError;
+				log("getSettings response",response);
+				if (!hydratePopupFromStartupSettings(response)){
+					// keep polling
+				} else {
+					clearInterval(initialSetup);
+				}
+			});
+		} catch(e) {
+			tryLocalFallbackSettings();
+			clearInterval(initialSetup);
+		}
 	}, 500);
 	
 	log("pop up asking main for settings");
-	chrome.runtime.sendMessage({cmd: "getSettings"}, (response) => {
-		chrome.runtime.lastError;
-		log("getSettings response",response);
-		if (!hydratePopupFromStartupSettings(response)){
-			
-		} else {
-			clearInterval(initialSetup);
+	if (typeof chrome !== "undefined" && chrome.runtime && typeof chrome.runtime.sendMessage === "function") {
+		try {
+			chrome.runtime.sendMessage({cmd: "getSettings"}, (response) => {
+				chrome.runtime.lastError;
+				log("getSettings response",response);
+				if (!hydratePopupFromStartupSettings(response)){
+					// keep polling
+				} else {
+					clearInterval(initialSetup);
+				}
+			});
+		} catch(e) {
+			tryLocalFallbackSettings();
 		}
-	});
+	} else {
+		tryLocalFallbackSettings();
+	}
 
 	//botReplyAll
 	var iii = document.querySelectorAll("input[type='checkbox']");
