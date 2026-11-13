@@ -108,11 +108,10 @@ elif command -v chromium >/dev/null 2>&1; then
 fi
 
 if [ -n "$CHROME_BIN" ]; then
-    echo -e "      ${GREEN}✓ Mở cửa sổ ứng dụng chuyên dụng (App Mode)...${NC}"
+    echo -e "      ${GREEN}✓ Khởi động trình duyệt với Extension Social Voice...${NC}"
     "$CHROME_BIN" \
         --load-extension="$STREAM_DIR" \
-        --app="$DOCK_URL" \
-        --user-data-dir="/tmp/social_voice_profile" \
+        "$DOCK_URL" \
         >/dev/null 2>&1 &
 else
     echo -e "      ${YELLOW}! Mở bằng trình duyệt mặc định...${NC}"

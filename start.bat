@@ -86,8 +86,8 @@ if exist "%ProgramFiles%\Google\Chrome\Application\chrome.exe" (
 )
 
 if defined CHROME_BIN (
-    echo       Mở cửa sổ ứng dụng chuyên biệt (App Mode)...
-    start "" "%CHROME_BIN%" --load-extension="%STREAM_DIR%" --app="%DOCK_URL%"
+    echo       Khởi động trình duyệt với Extension Social Voice...
+    start "" "%CHROME_BIN%" --load-extension="%STREAM_DIR%" "%DOCK_URL%"
 ) else (
     echo       Mở bằng trình duyệt mặc định...
     start "" "%DOCK_URL%"
