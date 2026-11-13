@@ -1942,19 +1942,19 @@ details.wrapper[open] > .collapsible-text {
     font-size: 1em;
 }
 
-.textInputWithUpload {
+.textInputWithTải lên {
     display: inline-grid;
     align-items: center;
 }
 
-.textInputWithUpload .textInput {
+.textInputWithTải lên .textInput {
     grid-area: 1 / 1;
     box-sizing: border-box;
     height: auto;
     padding-right: 78px;
 }
 
-.textInputWithUpload .textInput + label {
+.textInputWithTải lên .textInput + label {
     grid-area: 1 / 1;
     max-width: calc(100% - 86px);
     overflow: hidden;
@@ -1962,7 +1962,7 @@ details.wrapper[open] > .collapsible-text {
     white-space: nowrap;
 }
 
-.textInputWithUpload .textInputUploadButton {
+.textInputWithTải lên .textInputTải lênButton {
     grid-area: 1 / 1;
     position: static;
     justify-self: end;
@@ -2724,7 +2724,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper beginner-basic" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-chat-overlay-options" />
-                    <label class="collapsible-label" for="wrapper-chat-overlay-options"><span data-translate="overlay">🖼️ Overlay</span></label>
+                    <label class="collapsible-label" for="wrapper-chat-overlay-options"><span data-translate="overlay">🖼️ Lớp phủ hiển thị (Overlay)</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group streaming_chat">
@@ -2734,7 +2734,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span>
-										🔍 Chat Output Scale
+										🔍 Tỉ lệ kích thước khung chat
                                         <input type="range" id="dock-scale-range" min="0.3" max="4" step="0.05" value="1" style="width: 150px;" data-numbersetting="scale" data-range-display="dock-scale-display" data-range-suffix="x" />
                                         <span class="range-value" id="dock-scale-display">1.00x</span>
                                     </span>
@@ -2744,14 +2744,14 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="transparent" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="force-transparent-background">⭕ Force transparent background </span><span class="obs-transparent-note"> (OBS Browser Source is already transparent by default)</span>
+                                    <span data-translate="force-transparent-background">⭕ Buộc nền trong suốt </span><span class="obs-transparent-note"> (Nguồn trình duyệt OBS mặc định đã trong suốt)</span>
                                 </div>
-                                <div title="Hide scrollbars while keeping the dock scrollable. Adds &hidescrollbar to the dock URL." data-keywords="scrollbar scroll bar hide hidden scrolling dock overlay">
+                                <div title="Ẩn thanh cuộns while keeping the dock scrollable. Adds &hidescrollbar to the dock URL." data-keywords="scrollbar scroll bar hide hidden scrolling dock overlay">
                                     <label class="switch">
-                                        <input type="checkbox" data-param1="hidescrollbar" aria-label="Hide scrollbar" />
+                                        <input type="checkbox" data-param1="hidescrollbar" aria-label="Ẩn thanh cuộn" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span><span class="popup-control-icon" aria-hidden="true">&#8597;</span><span data-translate="hide-scrollbar"> Hide scrollbar </span></span>
+                                    <span><span class="popup-control-icon" aria-hidden="true">&#8597;</span><span data-translate="hide-scrollbar"> Ẩn thanh cuộn </span></span>
                                 </div>
                                 <div title="This won't work in Chrome" data-keywords="opacity transparency fade dim ghost see-through brightness alpha slider">
                                     <label class="switch">
@@ -2759,7 +2759,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span>
-                                        👻 Page opacity
+                                        👻 Độ mờ trang
                                         <input type="range" id="dock-opacity-range" min="0" max="1" step="0.05" value="0.3" style="width: 150px;" data-numbersetting="opacity" data-range-display="dock-opacity-display" />
                                         <span class="range-value" id="dock-opacity-display">0.30</span>
                                     </span>
@@ -2770,7 +2770,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span>
-                                        <span data-translate="translucent-page-background">⚪ Translucent page background </span>
+                                        <span data-translate="translucent-page-background">⚪ Nền trang bán trong suốt </span>
                                         <input type="range" id="dock-chroma-range" min="0" max="100" step="1" value="40" style="width: 80px;" data-numbersetting="chromaalpha" data-range-display="dock-chroma-display" data-range-suffix="%" />
                                         <span class="range-value" id="dock-chroma-display">40%</span>
                                     </span>
@@ -2780,14 +2780,14 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="chroma" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="green-page-background">🟢 Green page background </span>
+                                    <span data-translate="green-page-background">🟢 Nền xanh lá (Green screen) </span>
                                 </div>
 								 <div data-keywords="white screen chroma key background clean mode">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="chroma=fff" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="white-page-background">⚪ White page background </span>
+                                    <span data-translate="white-page-background">⚪ Nền trắng </span>
                                 </div>
 
                                 <div title="This won't work in Chrome" data-keywords="light mode bright white theme daytime background invert">
@@ -2795,47 +2795,47 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="lightmode" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="light-mode--white-page-background">⚪ Light mode - White page background </span>
+                                    <span data-translate="light-mode--white-page-background">⚪ Chế độ sáng - Nền trắng </span>
                                 </div>
                                 <div data-keywords="dark mode night black theme high contrast">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="darkmode" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="dark-mode--black-page-background">⚫ Dark mode - Black page background </span>
+                                    <span data-translate="dark-mode--black-page-background">⚫ Chế độ tối - Nền đen </span>
                                 </div>
 								<div data-keywords="fade mask gradient feather top overlay soften edges vignette">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="fadedtop" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="fadedtop">🌇 Fade out the top of the overlay </span>
+                                    <span data-translate="fadedtop">🌇 Làm mờ dần phần đỉnh khung chat </span>
                                 </div>
 								<div data-keywords="viewer count audience numbers stats analytics tally">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="showviewercount" />
                                         <span class="slider round"></span>
                                     </label>
-									<span data-translate="show-viewer-count">🔢 Show viewer count per source; top-right</span>
+									<span data-translate="show-viewer-count">🔢 Hiện số người xem theo từng nguồn (góc trên phải)</span>
                                 </div>
 								<div data-keywords="like count likes reactions stats analytics tally" title="Enabling this also enables Send platform like totals in Global Settings.">
 									<label class="switch">
 										<input type="checkbox" data-param1="showlikecount" />
 										<span class="slider round"></span>
 									</label>
-									<span><span class="icon" style="display: inline-block;" aria-hidden="true">❤️</span> Show like totals per source; top-right</span>
+									<span><span class="icon" style="display: inline-block;" aria-hidden="true">❤️</span> Hiện tổng lượt thích theo từng nguồn (góc trên phải)</span>
 								</div>
 								<div data-keywords="viewer count reserve space top bar overlap chat">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="reserveviewercountspace" />
                                         <span class="slider round"></span>
                                     </label>
-									<span data-translate="reserve-space-for-the-viewer-count-bar">↕️ Reserve space for the viewer count bar</span>
+									<span data-translate="reserve-space-for-the-viewer-count-bar">↕️ Dành khoảng trống cho thanh số người xem</span>
                                 </div>
 								<div data-keywords="viewer count hide source exclude platform audience stats">
 									<div class="textInputContainer" style="width: 95%;" title="Select source types to exclude from viewer counts only. Chat stays active.">
-										<input type="text" id="hideViewerCountSources" class="textInput instant" autocomplete="off" placeholder="Select sources below" data-textsetting="hideViewerCountSources" />
-										<label for="hideViewerCountSources"><span class="popup-control-icon" aria-hidden="true">👁️</span>Hide viewer counts from these sources</label>
+										<input type="text" id="hideViewerCountSources" class="textInput instant" autocomplete="off" placeholder="Chọn các nguồn bên dưới" data-textsetting="hideViewerCountSources" />
+										<label for="hideViewerCountSources"><span class="popup-control-icon" aria-hidden="true">👁️</span>Ẩn số người xem từ các nguồn này</label>
 									</div>
 								</div>
 								<div data-keywords="bitrate video stats metadata srt stream bandwidth">
@@ -2843,21 +2843,21 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="showbitrate" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>📊 Show bitrate metadata if available; top-right <a href="https://socialstream.ninja/beta/docs/video-stats-bitrate.html" target="_blank" rel="noopener" class="lightblue" title="Open the video stats and bitrate guide" aria-label="Open the video stats and bitrate guide">[?]</a></span>
+                                    <span>📊 Hiện thông số bitrate nếu có (góc trên phải) <a href="https://socialstream.ninja/beta/docs/video-stats-bitrate.html" target="_blank" rel="noopener" class="lightblue" title="Open the video stats and bitrate guide" aria-label="Open the video stats and bitrate guide">[?]</a></span>
                                 </div>
 								<div title="Set the top-right viewer count bar background color. Supports hex, rgba, and named colors." data-keywords="viewer bar topbar background color theme dock style">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="viewerbarbg" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🎨 Custom viewer bar background color</span>
+                                    <span>🎨 Màu nền thanh người xem tùy chỉnh</span>
                                 </div>
 								<div class="colorInputRow">
 									<div class="textInputContainer" style="width: 95%;" title="Examples: #0009, #1f2937cc, rgba(0,0,0,0.65)">
-										<input type="text" id="dock_viewerbarbg" class="textInput instant" autocomplete="off" placeholder="e.g. #0009 or rgba(0,0,0,0.65)" data-textparam1="viewerbarbg" data-palette="dock_viewerbarbg_palette" />
-										<label id="dock_viewerbarbg_label" for="dock_viewerbarbg"><span class="popup-control-icon" aria-hidden="true">🎨</span>Viewer bar background color</label>
+										<input type="text" id="dock_viewerbarbg" class="textInput instant" autocomplete="off" placeholder="ví dụ: #0009 hoặc rgba(0,0,0,0.65)" data-textparam1="viewerbarbg" data-palette="dock_viewerbarbg_palette" />
+										<label id="dock_viewerbarbg_label" for="dock_viewerbarbg"><span class="popup-control-icon" aria-hidden="true">🎨</span>Màu nền thanh người xem</label>
 									</div>
-									<input type="color" aria-labelledby="dock_viewerbarbg_label" data-color="dock_viewerbarbg" id="dock_viewerbarbg_palette" class="colorPicker" title="Pick a viewer bar background color" />
+									<input type="color" aria-labelledby="dock_viewerbarbg_label" data-color="dock_viewerbarbg" id="dock_viewerbarbg_palette" class="colorPicker" title="Chọn màu nền cho thanh người xem" />
 								</div>
 
                                 <div title="Another Social Stream page MUST be added to OBS with page permissions set to 'Read access to user information' or higher." data-keywords="obs remote scene indicator status corner preview permissions">
@@ -2865,10 +2865,10 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="remote" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="show-current-obs-scene">🚥 Show current OBS scene in corner </span>
+                                    <span data-translate="show-current-obs-scene">🚥 Hiện tên cảnh (Scene) OBS hiện tại ở góc </span>
                                     <br />
                                     <a class="options-link rounded_area" target="_blank" href="https://github.com/steveseguin/social_stream/blob/main/README.md#obs-remote-scene-support">
-                                        Details on enabling the read-permissions for OBS scene state
+                                        Chi tiết cách bật quyền đọc trạng thái cảnh OBS
                                     </a>
                                 </div>
                             </div>
@@ -2880,7 +2880,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper beginner-basic" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-chat-message-mechanics-options" />
-                    <label class="collapsible-label" for="wrapper-chat-message-mechanics-options"><span data-translate="message---mechanics">💬 Message - ⚙️ Mechanics</span></label>
+                    <label class="collapsible-label" for="wrapper-chat-message-mechanics-options"><span data-translate="message---mechanics">💬 Cơ chế hiển thị Tin nhắn (Mechanics)</span></label>
                     <div class="collapsible-text">
                         <div class="options">
 							<div class="options_group streaming_chat">
@@ -2889,7 +2889,7 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="debug" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🐞 Debug mode (console logs on))</span>
+                                    <span>🐞 Chế độ gỡ lỗi (bật log console)</span>
                                 </div>
 								<div data-keywords="auto hide timeout duration timer expire disappear">
                                     <label class="switch">
@@ -2897,7 +2897,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span data-translate="hide-messages-after-20s">
-                                        ⏲️ Auto-hide message after <input type="number" style="max-width: calc(8ch + 34px);" max="999999" min="1" value="30000" size="6" data-numbersetting="showtime" />ms
+                                        ⏲️ Tự động ẩn tin nhắn sau <input type="number" style="max-width: calc(8ch + 34px);" max="999999" min="1" value="30000" size="6" data-numbersetting="showtime" />ms
                                     </span>
                                 </div>
 								<div title="This option gives you time to delete a message with another dock that doesn't have the delay; censorship-friendly then" data-keywords="delay buffer moderation safety hold timed release">
@@ -2906,7 +2906,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span data-translate="show-messages-after-10s">
-                                        🚫🤬️ Delay showing messages for <input type="number" style="max-width: calc(8ch + 34px);" max="999999" min="1" value="10000" size="6" data-numbersetting="delaytime" />ms
+                                        ⏳ Trì hoãn hiển thị tin nhắn <input type="number" style="max-width: calc(8ch + 34px);" max="999999" min="1" value="10000" size="6" data-numbersetting="delaytime" />ms
                                     </span>
                                 </div>
 								<div title="If deleting a message, such as if syncing with Youtube Delete, only delete the last message from that user, and not all of theirs" data-keywords="delete removal last message safe cleanup moderation youtube">
@@ -2914,103 +2914,103 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="deleteonlylast" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <img src="./sources/images/youtube.png" class="icon" /> <span data-translate="delete-only-last">🗑️ Only delete last message if unsure which to 🗑️</span>
+                                    <img src="./sources/images/youtube.png" class="icon" /> <span data-translate="delete-only-last">🗑️ Chỉ xóa tin nhắn cuối cùng nếu không rõ tin nào</span>
                                 </div>
                                 <div title="Keep captured messages dimmed and marked Deleted after removal. Leave off for an audience-facing Dock." data-keywords="showdeleted deleted removed blocked automod moderation retain dim personal dock">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="showdeleted" aria-labelledby="show-deleted-messages-label" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span id="show-deleted-messages-label" data-translate="show-deleted-messages">🗑️ Show deleted messages</span>
+                                    <span id="show-deleted-messages-label" data-translate="show-deleted-messages">🗑️ Hiển thị tin nhắn đã bị xóa</span>
                                 </div>
                                 <div data-keywords="bottom anchor newest first scroll position dock layout">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="alignbottom" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="messages-start-at-bottom-rather-than-top">⏬ Messages start at bottom rather than top </span>
+                                    <span data-translate="messages-start-at-bottom-rather-than-top">⏬ Tin nhắn xuất hiện từ dưới lên (thay vì trên xuống) </span>
                                 </div>
                                 <div data-keywords="drop down falling reversed stack waterfall animation">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="dropdown" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="messages-drop-down-reversed-order">🔃 Messages drop down (reversed order) </span>
+                                    <span data-translate="messages-drop-down-reversed-order">🔃 Tin nhắn rơi xuống từ trên (thứ tự đảo ngược) </span>
                                 </div>
 								<div data-keywords="reverse invert order flip history top newest">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="reverse" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="messages-reverse-order">🔀 Reverse order (top down new messages)</span>
+                                    <span data-translate="messages-reverse-order">🔀 Đảo ngược thứ tự (tin nhắn mới từ trên xuống)</span>
                                 </div>
                                 <div data-keywords="shuffle scatter random layout chaos floating">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="random" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="messages-appear-randomly-on-the-screen">🔀 Messages appear randomly on the screen </span>
+                                    <span data-translate="messages-appear-randomly-on-the-screen">🔀 Tin nhắn xuất hiện ngẫu nhiên trên màn hình </span>
                                 </div>
                                 <div data-keywords="auto scroll follow latest keep bottom feed continuous">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autoscroll" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="messages-auto-scroll">🔽 Enable auto-scrolling to the bottom by default </span>
+                                    <span data-translate="messages-auto-scroll">🔽 Tự động cuộn xuống dưới cùng theo mặc định </span>
                                 </div>
                                 <div data-keywords="manual scroll lock pause autoscroll browse backlog">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="manualscroll" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🛑 Manual scroll mode (disable auto-scroll unless Force Scroll is enabled)</span>
+                                    <span>🛑 Chế độ cuộn thủ công (tắt tự cuộn)</span>
                                 </div>
                                 <div data-keywords="align right flush right-justified rtl layout">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="alignright" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="messages-align-right">👉🧱 Messages align to the right-side </span>
+                                    <span data-translate="messages-align-right">👉🧱 Căn lề tin nhắn sang bên phải </span>
                                 </div>
                                 <div data-keywords="right to left languages arabic hebrew rtl text direction">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="rtl" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="text-align-right">🗨️🧱 Force right-to-left text reading </span>
+                                    <span data-translate="text-align-right">🗨️🧱 Đọc văn bản từ phải sang trái (RTL) </span>
                                 </div>
                                 <div data-keywords="dissolve fade away auto clear animation vanish">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="dissolve" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="stream-events-fade-up-and-away-after-3s">🚬 Stream events fade up and away after 3s </span>
+                                    <span data-translate="stream-events-fade-up-and-away-after-3s">🚬 Sự kiện livestream mờ dần và biến mất sau 3 giây </span>
                                 </div>
                                 <div title="Note: You must first interact with the dock-page for any audio to be audible." data-keywords="sound audio notification alert notify bell ring chime noise">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="beep" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="beep-when-there-is-a-new-message">🔔 Beep when there is a new message </span>
+                                    <span data-translate="beep-when-there-is-a-new-message">🔔 Phát âm thanh "Bíp" khi có tin nhắn mới </span>
                                 </div>
                                 <div title="Enable dock beeps, but only for messages identified as coming from moderators." data-keywords="moderator mod beep sound notification alert">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="beeponlymod" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🔔🛡️ Beep only for moderator messages</span>
+                                    <span>🔔🛡️ Chỉ phát tiếng "Bíp" cho tin nhắn của Quản trị viên (Mod)</span>
                                 </div>
                                 <div title="Beep only when a dock message has the first-time chatter flag. Requires First-time chatter detection and the local database." data-keywords="beep sound first timer chatter new viewer notification">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="beepfirsttime" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🔔🆕 Dock beep for first-time chatters</span>
+                                    <span>🔔🆕 Phát tiếng "Bíp" cho người nhắn tin lần đầu</span>
                                     <span id="firstTimerDockBeepWarning" style="display: none; margin-left: 8px; font-size: 0.9em; color: #e9c46a;">
-                                        Needs detection + database.
-                                        <a href="#" id="enableFirstTimerDockRequirements" class="lightblue">Enable both</a>
+                                        Cần bật tính năng nhận diện + cơ sở dữ liệu.
+                                        <a href="#" id="enableFirstTimerDockRequirements" class="lightblue">Bật cả hai</a>
                                         |
-                                        <a href="#databaseSettingsRow" id="showFirstTimerDockDatabaseSetting" class="lightblue">Database setting</a>
+                                        <a href="#databaseSettingsRow" id="showFirstTimerDockDatabaseSetting" class="lightblue">Cài đặt cơ sở dữ liệu</a>
                                     </span>
                                 </div>
                                 <div title="Lower the beep's volume" data-keywords="notification volume loudness gain attenuate quieter">
@@ -3019,60 +3019,60 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span>
-                                        🔔🔉 Beep volume
+                                        🔔🔉 Âm lượng tiếng bíp
                                         <input type="range" id="dock-beep-volume-range" min="0" max="100" step="1" value="30" style="width: 120px;" data-numbersetting="beepvolume" data-range-display="dock-beep-volume-display" data-range-suffix="%" />
                                         <span class="range-value" id="dock-beep-volume-display">30%</span>
                                     </span>
                                 </div>
-                                <div class="popup-toggle-row" title="Use a louder version of the built-in notification sound. Enable new-message beeps separately. Custom beep URLs take priority." data-keywords="louder beep preset notification sound volume boost amplify gain">
+                                <div class="popup-toggle-row" title="Use a louder version of the built-in notification sound. Enable new-message beeps separately. Đường dẫn âm thanh tùy chỉnh sẽ được ưu tiên." data-keywords="louder beep preset notification sound volume boost amplify gain">
                                     <label class="switch">
                                         <input type="checkbox" id="dock-loud-beep" data-param1="loudbeep" aria-labelledby="dock-loud-beep-label" aria-describedby="dock-loud-beep-help" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <label for="dock-loud-beep" id="dock-loud-beep-label"><span class="popup-control-icon" aria-hidden="true">🔊</span>Louder built-in beep</label>
-                                    <button type="button" id="dock-loud-beep-preview" class="tts-test-button" title="Preview the louder preset using your Beep volume setting"><span aria-hidden="true">▶</span> Preview louder beep</button>
+                                    <label for="dock-loud-beep" id="dock-loud-beep-label"><span class="popup-control-icon" aria-hidden="true">🔊</span>Âm thanh bíp mặc định to hơn</label>
+                                    <button type="button" id="dock-loud-beep-preview" class="tts-test-button" title="Preview the louder preset using your Beep volume setting"><span aria-hidden="true">▶</span> Nghe thử tiếng bíp to hơn</button>
                                 </div>
-                                <small id="dock-loud-beep-help">Custom beep URLs take priority.</small>
+                                <small id="dock-loud-beep-help">Đường dẫn âm thanh tùy chỉnh sẽ được ưu tiên.</small>
                                 <span id="dock-loud-beep-status" role="status" aria-live="polite"></span>
-                                <div class="textInputContainer textInputWithUpload" style="width: 95%;" title="Specify a URL for a custom beep audio file">
-                                    <input type="text" id="custombeep" class="textInput instant" autocomplete="off" placeholder="eg: https://www.yourdomain.com/beep.wav" data-translate="placeholder-audio-url" data-textparam1="custombeep" />
-                                    <label for="custombeep"><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="custombeep">URL for custom beep audio file</span></label>
-                                    <button type="button" id="uploadBeepBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span>Upload</button>
+                                <div class="textInputContainer textInputWithTải lên" style="width: 95%;" title="Specify a URL for a custom beep audio file">
+                                    <input type="text" id="custombeep" class="textInput instant" autocomplete="off" placeholder="vd: https://domain-cua-ban.com/beep.wav" data-translate="placeholder-audio-url" data-textparam1="custombeep" />
+                                    <label for="custombeep"><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="custombeep">Đường dẫn URL tệp âm thanh bíp tùy chỉnh</span></label>
+                                    <button type="button" id="uploadBeepBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span>Tải lên</button>
                                 </div>
 								<div title="Plays a near-silent ping every 25 seconds to help keep Bluetooth speakers from sleeping during quiet periods; useful on Android when using dock TTS." data-keywords="bluetooth speaker keep alive audio tts android quiet idle sleep">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="btkeepalive" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🔈 Keep Bluetooth speaker awake with a near-silent ping</span>
+                                    <span>🔈 Giữ loa Bluetooth không ngủ bằng âm ping cực nhỏ</span>
                                 </div>
 								<div title="Allow beep sounds to overlap when messages arrive quickly (experimental)" data-keywords="beep sound overlap concurrent multiple simultaneous experimental">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="overlapbeep" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span><span class="popup-control-icon" aria-hidden="true">🔊</span>Allow overlapping beeps (experimental)</span>
+                                    <span><span class="popup-control-icon" aria-hidden="true">🔊</span>Cho phép tiếng bíp phát đè lên nhau (thử nghiệm)</span>
                                 </div>
                                 <div data-keywords="refresh history backlog cache resume reconnect restore">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="reload" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="reload-the-last-50-messages-when-refreshing-the-page">🔄️ Reload last ~50-msgs when refreshing the page </span>
+                                    <span data-translate="reload-the-last-50-messages-when-refreshing-the-page">🔄️ Tải lại ~50 tin nhắn gần nhất khi làm mới trang </span>
                                 </div>
 								<div data-keywords="load previous history archive backlog database state resume">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="loadlast" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="loadlast">🗄️ Load last ~30-msgs from the database on load </span>
+                                    <span data-translate="loadlast">🗄️ Nạp ~30 tin nhắn gần nhất từ cơ sở dữ liệu khi mở </span>
                                 </div>
 								<div data-keywords="history browse older messages scroll back archive">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="history" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🕰️ Enable history browsing (scroll up to load older messages)</span>
+                                    <span>🕰️ Cho phép xem lịch sử chat (cuộn lên để nạp tin cũ)</span>
                                 </div>
 
                                 <div data-keywords="autoshowqueued auto-feature queued messages">
@@ -3080,35 +3080,35 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="autoshowqueued" aria-labelledby="popup-1-autoshowqueued-label" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span id="popup-1-autoshowqueued-label"><span class="popup-control-icon" aria-hidden="true">▶️</span><span data-translate="popup-url-auto-feature-queue">Auto-feature queued messages</span></span>
+                                    <span id="popup-1-autoshowqueued-label"><span class="popup-control-icon" aria-hidden="true">▶️</span><span data-translate="popup-url-auto-feature-queue">Tự động ghim nổi bật tin nhắn trong hàng đợi</span></span>
                                 </div>
                                 <div data-keywords="queueonly show queued messages only">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="queueonly" aria-labelledby="popup-1-queueonly-label" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span id="popup-1-queueonly-label"><span class="popup-control-icon" aria-hidden="true">📋</span><span data-translate="popup-url-queued-only">Show queued messages only</span></span>
+                                    <span id="popup-1-queueonly-label"><span class="popup-control-icon" aria-hidden="true">📋</span><span data-translate="popup-url-queued-only">Chỉ hiển thị tin nhắn trong hàng đợi</span></span>
                                 </div>
                                 <div data-keywords="disabletimeout keep featured message until cleared">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="disabletimeout" aria-labelledby="popup-1-disabletimeout-label" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span id="popup-1-disabletimeout-label"><span class="popup-control-icon" aria-hidden="true">📌</span><span data-translate="popup-url-keep-featured">Keep featured message until cleared</span></span>
+                                    <span id="popup-1-disabletimeout-label"><span class="popup-control-icon" aria-hidden="true">📌</span><span data-translate="popup-url-keep-featured">Giữ tin nhắn nổi bật cho đến khi bấm xóa</span></span>
                                 </div>
                                 <div data-keywords="auto show feature highlight spotlight select queue">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autoshow" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="auto-select-new-messages-skipping-as-needed">🔖 Automatically feature new messages — all of them, unless limited by the options below (requires the dock to remain open) </span>
+                                    <span data-translate="auto-select-new-messages-skipping-as-needed">🔖 Tự động ghim nổi bật tất cả tin nhắn mới (yêu cầu mở dock) </span>
                                 </div>
 								<div data-keywords="manual selection context menu alt control choose yourself">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="altselect" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="altselect">🖱️ Must manually select via context-menu</span>
+                                    <span data-translate="altselect">🖱️ Phải chọn thủ công qua menu chuột phải</span>
                                 </div>
 
                                 <div data-keywords="auto show duration timer exposure seconds milliseconds linger">
@@ -3117,7 +3117,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span data-translate="auto-show-time">
-                                        ⌚ Custom auto-select show time <input type="number" style="max-width: calc(8ch + 34px);" max="999999" min="1" value="30000" size="6" data-numbersetting="autoshowtime" />ms
+                                        ⌚ Thời gian hiển thị tin tự chọn <input type="number" style="max-width: calc(8ch + 34px);" max="999999" min="1" value="30000" size="6" data-numbersetting="autoshowtime" />ms
                                     </span>
                                 </div>
                                 <div data-keywords="filter moderation blacklist blocklist safe clean exclude flagged">
@@ -3125,18 +3125,18 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="excludefiltered" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="Exclude filtered from auto-show">🥅 Exclude filtered messages from auto-selecting </span>
+                                    <span data-translate="Exclude filtered from auto-show">🥅 Loại trừ tin nhắn bị lọc khỏi việc tự động chọn </span>
                                 </div>
 								<div data-keywords="filter block hide words phrases text content moderation blacklist blocklist censor mute suppress NOALBS">
 									<label class="switch">
 										<input type="checkbox" data-param1="blockedwords" />
 										<span class="slider round"></span>
 									</label>
-									<span>🚫 Contains text or name</span>
+									<span>🚫 Chặn theo từ khóa hoặc tên người dùng</span>
 									<div class="isolate" style="margin-left: 50px; margin-top: 5px;">
 										<div class="blockedwords-list-container source-list-container" id="blockedwordsList"></div>
 										<div class="add-blockedword-container">
-											<input type="text" id="newBlockedWord" placeholder="Word or phrase to block" style="width: 180px;" />
+											<input type="text" id="newBlockedWord" placeholder="Từ hoặc cụm từ cần chặn" style="width: 180px;" />
 											<button id="addBlockedWord"><span class="popup-control-icon" aria-hidden="true">➕</span>Add</button>
 										</div>
 										<input type="text" id="blockedwordsInput" class="textInput hidden" data-textparam1="blockedwords" style="display: none;" />
@@ -3147,7 +3147,7 @@ details.wrapper[open] > .collapsible-text {
 										<input type="checkbox" data-param1="exactblockedmessages" />
 										<span class="slider round"></span>
 									</label>
-									<span>🚫 Exact message</span>
+									<span>🚫 Chặn chính xác toàn bộ nội dung tin nhắn</span>
 									<div style="margin-left: 50px; margin-top: 5px;">
 										<div class="textInputContainer" style="display: none;">
 											<input type="text" id="exactblockedmessages" class="textInput" data-textparam1="exactblockedmessages" />
@@ -3159,19 +3159,19 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="stripdonations" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="strip-donation-data-from-messages">🏷️🗑️ Remove donation data from messages </span>
+                                    <span data-translate="strip-donation-data-from-messages">🏷️🗑️ Xóa thông tin tiền ủng hộ (donate) khỏi tin nhắn </span>
                                 </div>
 								 <div data-keywords="skip donations ignore tips hide monetary events filter sponsors">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="skipdonations" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="skip-donation-data-from-messages">🏷️🦘 Skip messages containing donations </span>
+                                    <span data-translate="skip-donation-data-from-messages">🏷️🦘 Bỏ qua tin nhắn có tiền ủng hộ (donate) </span>
                                 </div>
 								<div data-keywords="custom donation thank you fallback superchat tip message text">
 									<div class="textInputContainer donation-thank-you-input" style="display: inline-grid; margin-top: 6px;">
-										<input type="text" id="customDonationThankYou" class="textInput" autocomplete="off" placeholder="Thank you for your donation!" data-textsetting="customDonationThankYou" />
-										<label for="customDonationThankYou"><span class="popup-control-icon" aria-hidden="true">💵</span><span>Custom donation thank-you text</span></label>
+										<input type="text" id="customDonationThankYou" class="textInput" autocomplete="off" placeholder="Cảm ơn bạn đã ủng hộ livestream!" data-textsetting="customDonationThankYou" />
+										<label for="customDonationThankYou"><span class="popup-control-icon" aria-hidden="true">💵</span><span>Lời cảm ơn ủng hộ (donate) tùy chỉnh</span></label>
 									</div>
 								</div>
                                 <div data-keywords="money tip superchat super chat bits donation donate payment paid sponsor highlight">
@@ -3179,141 +3179,141 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="autoshowdonos" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="when-auto-selecting-is-on-only-auto-select-donations">🏷️ Auto-feature donations </span>
+                                    <span data-translate="when-auto-selecting-is-on-only-auto-select-donations">🏷️ Tự động làm nổi bật tin nhắn donate </span>
                                 </div>
                                 <div data-keywords="memberships supporters subs loyalty program priority vip">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autoshowmembers" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="when-auto-selecting-is-on-only-auto-select-members">👑 Auto-feature messages from members </span>
+                                    <span data-translate="when-auto-selecting-is-on-only-auto-select-members">👑 Tự động làm nổi bật tin nhắn của Hội viên </span>
                                 </div>
 								<div data-keywords="Show messages that contain a content-image; such as those created using #giphy option">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autoshowcontentimages" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="autoshowcontentimages">😺 Auto-feature messages with a content image</span>
+                                    <span data-translate="autoshowcontentimages">😺 Tự động làm nổi bật tin nhắn có hình ảnh đính kèm</span>
                                 </div>
 								<div data-keywords="youtube membership loyalty badge monthly support highlight">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autoyoutubememberchat" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="auto-feature-monthly-member-chat">👑 Auto-feature YouTube monthly member chat </span><img src="./sources/images/youtube.png" class="icon" />
+                                    <span data-translate="auto-feature-monthly-member-chat">👑 Tự động làm nổi bật chat thành viên hàng tháng YouTube </span><img src="./sources/images/youtube.png" class="icon" />
                                 </div>
 								<div title="Automatically pins messages that are identified as questions" data-keywords="Q&A QA Q and A ask query queries FAQ help support queue pin sticky">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autopinquestions" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="auto-pin-questions">❓📌 Auto-pin messages identified as questions </span>
+                                    <span data-translate="auto-pin-questions">❓📌 Tự động ghim câu hỏi của người xem </span>
                                 </div>
 								<div title="Automatically queues messages that are identified as questions" data-keywords="queues queue ask query queries FAQ help support queue pin sticky">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autoqueuequestions" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="auto-queue-questions">❓⛓️ Auto-queue messages identified as questions </span>
+                                    <span data-translate="auto-queue-questions">❓⛓️ Tự động đưa câu hỏi vào hàng đợi </span>
                                 </div>
                                 <div title="Track messages containing ? and identified questions. Keeps the latest 100 in the standard dock; resets on reload." data-keywords="unanswered questions Q&A tracking">
                                     <label class="switch"><input type="checkbox" data-param1="trackquestions" aria-label="Track unanswered questions" /><span class="slider round"></span></label>
-                                    <span>❓ Track unanswered questions</span>
+                                    <span>❓ Theo dõi các câu hỏi chưa được trả lời</span>
                                 </div>
 								<div title="Automatically pins messages that are identified as donations" data-keywords="donations pin sticky">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autopindonations" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="auto-pin-donations">💵📌 Auto-pin messages with donations</span>
+                                    <span data-translate="auto-pin-donations">💵📌 Tự động ghim tin nhắn có tiền ủng hộ</span>
                                 </div>
 								<div title="Automatically queue messages that are identified as donations" data-keywords="donations queue sticky">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autoqueuedonations" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="auto-queue-donations">💵🔢 Auto-queue messages with donations</span>
+                                    <span data-translate="auto-queue-donations">💵🔢 Tự động đưa tin nhắn ủng hộ vào hàng đợi</span>
                                 </div>
 								<div title="Automatically queue only YouTube Super Chat messages" data-keywords="youtube superchat super chat queue paid donation">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autoqueuesuperchats" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="auto-queue-superchats">▶️💵 Auto-queue YouTube Super Chats only</span>
+                                    <span data-translate="auto-queue-superchats">▶️💵 Chỉ tự động đưa YouTube Super Chat vào hàng đợi</span>
                                 </div>
 								<div title="Automatically queue YouTube new memberships, renewals, milestone chats, gift purchases, and gift recipient alerts" data-keywords="youtube membership member subscription renewal milestone gifted gifts queue">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="autoqueuememberships" aria-label="Auto-queue YouTube membership alerts" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>👑 Auto-queue YouTube membership alerts</span>
+                                    <span>👑 Tự động đưa thông báo hội viên YouTube vào hàng đợi</span>
                                 </div>
 								<div data-keywords="sync link match multiple docks parity follow leader shared state">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="sync" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="multiple-docks-will-stay-in-sync-as-to-selected-messages">🔁 Multiple docks will stay in sync as to selected messages </span>
+                                    <span data-translate="multiple-docks-will-stay-in-sync-as-to-selected-messages">🔁 Nhiều dock sẽ đồng bộ tin nhắn đã chọn với nhau </span>
                                 </div>
 								<div title="Connect this dock like a featured overlay so it only receives messages featured from another dock." data-keywords="featured featured-only mirror relay selected messages overlay feed">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="featuredmode" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🌟 Only receive featured messages from another dock </span>
+                                    <span>🌟 Chỉ nhận tin nhắn nổi bật từ một dock khác </span>
                                 </div>
                                 <div data-keywords="pinned only filtered favorites highlight sticky list">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="pinnedonly" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="only-see-pinned-messages-for-use-with-sync">📌 Only see pinned messages (for use with &amp;sync) </span>
+                                    <span data-translate="only-see-pinned-messages-for-use-with-sync">📌 Chỉ xem tin nhắn đã ghim (dùng kèm &amp;sync) </span>
                                 </div>
 								<div title="This requests OBS browser source to have permissions set higher, plus the dock needs to be loaded in OBS" data-keywords="obs cycle scene switch guest command permissions remote">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="cycle" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="guests-can-cycle">🚲 Guests can use !cycle to change the scene in OBS*</span>
+                                    <span data-translate="guests-can-cycle">🚲 Khách có thể dùng lệnh !cycle để đổi cảnh trong OBS*</span>
                                 </div>
                                 <div data-keywords="view only readonly monitor display no actions safe mode">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="viewonly" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="view-only-mode-cant-chat-pin-or-feature">👁️ View-only mode. (Can't chat, pin, or feature) </span>
+                                    <span data-translate="view-only-mode-cant-chat-pin-or-feature">👁️ Chế độ chỉ xem (không thể chat, ghim hay nổi bật) </span>
                                 </div>
                                 <div data-keywords="chat only talk respond mute pin disable limited">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="chatmode" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="view--chat-only-mode-cant-pin-or-feature">👁️ View &amp; Chat-only mode. (Can't pin or feature) </span>
+                                    <span data-translate="view--chat-only-mode-cant-pin-or-feature">👁️ Chế độ xem &amp; chat (không thể ghim hay làm nổi bật) </span>
                                 </div>
                                 <div data-keywords="helper moderator assistant pin queue limited permissions role">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="helpermode" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="view-pin-and-queue-cant-chat-or-feature">👁️ View, Pin, and Queue. (Can't chat or feature) </span>
+                                    <span data-translate="view-pin-and-queue-cant-chat-or-feature">👁️ Chế độ xem, ghim và hàng đợi (không thể chat hay nổi bật) </span>
                                 </div>
                                 <div data-keywords="24h clock military time timestamp format locale">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="24hr" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="use-24-hour-time-for-timestamp">⌚ Use 24-hour time for timestamp </span>
+                                    <span data-translate="use-24-hour-time-for-timestamp">⌚ Dùng định dạng giờ 24h cho mốc thời gian </span>
                                 </div>
                                 <div title="Only others on the same network/computer as yours can connect to this via p2p" data-keywords="lan local network privacy security firewall offline">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="lanonly" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="allow-lan-only-p2p-connections">🖥️💻 P2P connections via LAN only </span>
+                                    <span data-translate="allow-lan-only-p2p-connections">🖥️💻 Chỉ kết nối P2P qua mạng nội bộ LAN </span>
                                 </div>
                                 <div class="textInputContainer" style="width: 95%;" title="Specify a command that lets a guest auto-queue a message">
                                     <input type="text" id="selfqueue" class="textInput instant" autocomplete="off" placeholder="eg: !lookie" data-translate="placeholder-command-example" data-textparam1="selfqueue" />
-                                    <label for="selfqueue"><span class="popup-control-icon" aria-hidden="true">💬</span><span data-translate="selfqueue">Chat command to auto-queue the message</span></label>
+                                    <label for="selfqueue"><span class="popup-control-icon" aria-hidden="true">💬</span><span data-translate="selfqueue">Lệnh chat để tự động đưa tin nhắn vào hàng đợi</span></label>
                                 </div>
                             </div>
                         </div>
@@ -4209,7 +4209,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-chat-message-visibility-options" />
-                    <label class="collapsible-label" for="wrapper-chat-message-visibility-options"><span data-translate="message---visibility">💬 Message - 👁️ Visibility</span></label>
+                    <label class="collapsible-label" for="wrapper-chat-message-visibility-options"><span data-translate="message---visibility">💬 Hiển thị Tin nhắn (Visibility)</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group streaming_chat">
@@ -4218,21 +4218,21 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="hidesource" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="hide-source-icon-eg">🛈 Hide source icon (e.g, </span><img src="./sources/images/youtube.png" class="icon" /><img src="./sources/images/tiktok.png" class="icon" />)
+                                    <span data-translate="hide-source-icon-eg">🛈 Ẩn biểu tượng nguồn phát (vd, </span><img src="./sources/images/youtube.png" class="icon" /><img src="./sources/images/tiktok.png" class="icon" />)
                                 </div>
                                 <div>
                                     <label class="switch">
                                         <input type="checkbox" data-param1="squaresource" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="square-source-icons">🔲 Make platform source icons square</span>
+                                    <span data-translate="square-source-icons">🔲 Chuyển biểu tượng nguồn phát thành hình vuông</span>
                                 </div>
                                 <div>
                                     <label class="switch">
                                         <input type="checkbox" data-param1="showsourcename" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="show-source-name">📝 Show source name as text next to icon</span>
+                                    <span data-translate="show-source-name">📝 Hiện tên nguồn phát bằng chữ cạnh biểu tượng</span>
                                 </div>
 								<div>
                                     <label class="switch">
@@ -4246,56 +4246,56 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param1="exclude=youtube" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="hide-youtube">🚫 Hide messages from YouTube</span><img src="./sources/images/youtube.png" class="icon" />
+                                    <span data-translate="hide-youtube">🚫 Ẩn tin nhắn từ YouTube</span><img src="./sources/images/youtube.png" class="icon" />
                                 </div>
 								<div>
                                     <label class="switch">
                                         <input type="checkbox" data-param1="blur" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="blur-instead">🌫️ Just blur messages from hidden sources</span>
+                                    <span data-translate="blur-instead">🌫️ Chỉ làm mờ tin nhắn từ nguồn bị ẩn</span>
                                 </div>
 								<div>
                                     <label class="switch">
                                         <input type="checkbox" data-param1="noblur" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🧼 Never blur hidden or timed-out messages</span>
+                                    <span>🧼 Không bao giờ làm mờ tin nhắn bị ẩn hoặc hết giờ</span>
                                 </div>
                                 <div>
                                     <label class="switch">
                                         <input type="checkbox" data-param1="branded" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="show-channel-icon">📺 Show channel icon </span>
+                                    <span data-translate="show-channel-icon">📺 Hiện ảnh đại diện kênh </span>
                                 </div>
                                 <div>
                                     <label class="switch">
                                         <input type="checkbox" data-param1="largechannelicon" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🔎 Use a larger channel icon</span>
+                                    <span>🔎 Dùng ảnh đại diện kênh lớn hơn</span>
                                 </div>
                                 <div>
                                     <label class="switch">
                                         <input type="checkbox" data-param1="showchannelname" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>📺 Show originating channel name</span>
+                                    <span>📺 Hiện tên kênh nguồn phát</span>
                                 </div>
                                 <div data-keywords="staticemotes freeze animated emotes">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="staticemotes" aria-labelledby="popup-1-staticemotes-label" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span id="popup-1-staticemotes-label"><span class="popup-control-icon" aria-hidden="true">❄️</span><span data-translate="popup-url-freeze-emotes">Freeze animated emotes</span></span>
+                                    <span id="popup-1-staticemotes-label"><span class="popup-control-icon" aria-hidden="true">❄️</span><span data-translate="popup-url-freeze-emotes">Đóng băng ảnh động emoji</span></span>
                                 </div>
                                 <div data-keywords="attachmentsonly show attachments only">
                                     <label class="switch">
                                         <input type="checkbox" data-param1="attachmentsonly" aria-labelledby="popup-1-attachmentsonly-label" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span id="popup-1-attachmentsonly-label"><span class="popup-control-icon" aria-hidden="true">🖼️</span><span data-translate="popup-url-attachments-only">Show attachments only</span></span>
+                                    <span id="popup-1-attachmentsonly-label"><span class="popup-control-icon" aria-hidden="true">🖼️</span><span data-translate="popup-url-attachments-only">Chỉ hiện tệp đính kèm / hình ảnh</span></span>
                                 </div>
                                 <div data-keywords="nocolon hide colon after names">
                                     <label class="switch">
@@ -4619,7 +4619,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper beginner-basic" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-chat-message-styling-options" />
-                    <label class="collapsible-label" for="wrapper-chat-message-styling-options"><span data-translate="message---styling">💬 Message - 🎨 Styling</span></label>
+                    <label class="collapsible-label" for="wrapper-chat-message-styling-options"><span data-translate="message---styling">💬 Kiểu dáng & Font chữ (Styling)</span></label>
                     <div class="collapsible-text">
 						<div class="options">
 							<div class="options_group streaming_chat">
@@ -4944,7 +4944,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper beginner-basic" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-chat-message-shading-options" />
-                    <label class="collapsible-label" for="wrapper-chat-message-shading-options"><span data-translate="background-shading">💬 Message - 🖌️ Background Shading</span></label>
+                    <label class="collapsible-label" for="wrapper-chat-message-shading-options"><span data-translate="background-shading">💬 Đổ bóng & Màu nền Tin nhắn</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group streaming_chat">
@@ -5094,7 +5094,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-chat-message-effects-options" />
-                    <label class="collapsible-label" for="wrapper-chat-message-effects-options"><span data-translate="message---effects">💬 Message - ✨ Effects</span></label>
+                    <label class="collapsible-label" for="wrapper-chat-message-effects-options"><span data-translate="message---effects">💬 Hiệu ứng Tin nhắn (Effects)</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group streaming_chat">
@@ -5307,7 +5307,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-chat-message-export-options" />
-                    <label class="collapsible-label" for="wrapper-chat-message-export-options"><span data-translate="message---export">💬 Message - 📄 Export</span></label>
+                    <label class="collapsible-label" for="wrapper-chat-message-export-options"><span data-translate="message---export">💬 Xuất & Lưu trữ Tin nhắn (Export)</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group streaming_chat">
@@ -5350,7 +5350,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper beginner-basic" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-chat-name-color-options" />
-                    <label class="collapsible-label" for="wrapper-chat-name-color-options"><span>💬 <span data-translate="popup-username-colors">Username colors</span></span></label>
+                    <label class="collapsible-label" for="wrapper-chat-name-color-options"><span>💬 <span data-translate="popup-username-colors">Màu sắc tên người dùng</span></span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group streaming_chat">
@@ -5391,7 +5391,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-hostbot-options" />
-                    <label class="collapsible-label" for="wrapper-hostbot-options"><span data-translate="identify-hosts-blocked">🦸 Identify hosts, mods, bots, VIPs, and blocked users</span></label>
+                    <label class="collapsible-label" for="wrapper-hostbot-options"><span data-translate="identify-hosts-blocked">🦸 Nhận diện Host, Mod, Bot, VIP và người dùng bị chặn</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group streaming_chat">
@@ -5661,7 +5661,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper beginner-basic" data-panel-section="overlay">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-featured-overlay-options" />
-                    <label class="collapsible-label" for="wrapper-featured-overlay-options"><span data-translate="overlay">🖼️ Overlay</span></label>
+                    <label class="collapsible-label" for="wrapper-featured-overlay-options"><span data-translate="overlay">🖼️ Lớp phủ hiển thị (Overlay)</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group single_message">
@@ -5689,7 +5689,7 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param2="chroma" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="green-page-background">🟢 Green page background </span>
+                                    <span data-translate="green-page-background">🟢 Nền xanh lá (Green screen) </span>
                                 </div>
                                 <div title="Useful for standalone pop-out overlays.">
                                     <label class="switch">
@@ -5731,7 +5731,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span data-translate="hide-overlay-after-20s">
-                                        ⏲️ Auto-hide message after <input type="number" style="max-width: calc(8ch + 34px);" max="999999" min="1" value="30000" size="6" data-numbersetting2="showtime" />ms
+                                        ⏲️ Tự động ẩn tin nhắn sau <input type="number" style="max-width: calc(8ch + 34px);" max="999999" min="1" value="30000" size="6" data-numbersetting2="showtime" />ms
                                     </span>
                                 </div>
 
@@ -5758,14 +5758,14 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param2="debug" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🐞 Debug mode (console logs on))</span>
+                                    <span>🐞 Chế độ gỡ lỗi (bật log console)</span>
                                 </div>
                                 <div title="Note: You must first interact with the dock-page for any audio to be audible.">
                                     <label class="switch">
                                         <input type="checkbox" data-param2="beep" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="beep-when-there-is-a-new-message">🔔 Beep when there is a new message </span>
+                                    <span data-translate="beep-when-there-is-a-new-message">🔔 Phát âm thanh "Bíp" khi có tin nhắn mới </span>
                                 </div>
 								<div title="Note: You must first interact with the dock-page for any audio to be audible.">
                                     <label class="switch">
@@ -5780,29 +5780,29 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span>
-                                        🔔🔉 Beep volume
+                                        🔔🔉 Âm lượng tiếng bíp
                                         <input type="range" id="overlay-beep-volume-range" min="0" max="100" step="5" value="30" style="width: 150px;" data-numbersetting2="beepvolume" data-range-display="overlay-beep-volume-display" data-range-suffix="%" />
                                         <span class="range-value" id="overlay-beep-volume-display">30%</span>
                                     </span>
                                 </div>
-                                <div class="textInputContainer textInputWithUpload" style="width: 95%;" title="Specify a URL for a custom beep audio file">
-                                    <input type="text" id="custombeep2" class="textInput instant" autocomplete="off" placeholder="eg: https://www.yourdomain.com/beep.wav" data-translate="placeholder-audio-url" data-textparam2="custombeep" />
-                                    <label for="custombeep2"><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="custombeep">URL for custom beep audio file</span></label>
-                                    <button type="button" id="uploadBeepBtn2" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span>Upload</button>
+                                <div class="textInputContainer textInputWithTải lên" style="width: 95%;" title="Specify a URL for a custom beep audio file">
+                                    <input type="text" id="custombeep2" class="textInput instant" autocomplete="off" placeholder="vd: https://domain-cua-ban.com/beep.wav" data-translate="placeholder-audio-url" data-textparam2="custombeep" />
+                                    <label for="custombeep2"><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="custombeep">Đường dẫn URL tệp âm thanh bíp tùy chỉnh</span></label>
+                                    <button type="button" id="uploadBeepBtn2" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span>Tải lên</button>
                                 </div>
                                 <div>
                                     <label class="switch">
                                         <input type="checkbox" data-param2="alignright" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="messages-align-right">👉🧱 Messages align to the right-side </span>
+                                    <span data-translate="messages-align-right">👉🧱 Căn lề tin nhắn sang bên phải </span>
                                 </div>
                                 <div>
                                     <label class="switch">
                                         <input type="checkbox" data-param2="rtl" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="text-align-right">🗨️🧱 Force right-to-left text reading </span>
+                                    <span data-translate="text-align-right">🗨️🧱 Đọc văn bản từ phải sang trái (RTL) </span>
                                 </div>
                                 <div class="textInputContainer" data-keywords="limit message limit">
                                     <input id="popup-2-limit" type="number" class="textInput" data-optionparam2="limit" min="1" max="1000" step="1" />
@@ -5823,7 +5823,7 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param2="lanonly" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="allow-lan-only-p2p-connections">🖥️💻 P2P connections via LAN only </span>
+                                    <span data-translate="allow-lan-only-p2p-connections">🖥️💻 Chỉ kết nối P2P qua mạng nội bộ LAN </span>
                                 </div>
                                 <div title="To use, you must click on the page when it opens and select where to save the image for this to work">
                                     <label class="switch">
@@ -5842,7 +5842,7 @@ details.wrapper[open] > .collapsible-text {
                                 <div class="textInputContainer" style="width: 95%; position: relative;" title="Specify the image URL that should appear when a chat message is missing an avatar">
                                     <input type="text" id="featuredFallbackImage" class="textInput instant" autocomplete="off" placeholder="https://fileuploads.socialstream.ninja/your-image.png" data-textparam2="fallbackimg" />
                                     <label for="featuredFallbackImage"><span class="popup-control-icon" aria-hidden="true">🔗</span>Custom fallback avatar image URL</label>
-                                    <button type="button" id="uploadFeaturedFallbackBtn" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); padding: 5px 10px; background: var(--upload-button-bg, #667eea); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;"><span class="popup-control-icon" aria-hidden="true">📤</span>Upload</button>
+                                    <button type="button" id="uploadFeaturedFallbackBtn" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); padding: 5px 10px; background: var(--upload-button-bg, #667eea); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;"><span class="popup-control-icon" aria-hidden="true">📤</span>Tải lên</button>
                                 </div>
                             </div>
                         </div>
@@ -6519,7 +6519,7 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param2="squaresource" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="square-source-icons">🔲 Make platform source icons square</span>
+                                    <span data-translate="square-source-icons">🔲 Chuyển biểu tượng nguồn phát thành hình vuông</span>
                                 </div>
                                 <div>
                                     <label class="switch">
@@ -6533,21 +6533,21 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param2="branded" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="show-channel-icon">📺 Show channel icon </span>
+                                    <span data-translate="show-channel-icon">📺 Hiện ảnh đại diện kênh </span>
                                 </div>
                                 <div>
                                     <label class="switch">
                                         <input type="checkbox" data-param2="largechannelicon" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>🔎 Use a larger channel icon</span>
+                                    <span>🔎 Dùng ảnh đại diện kênh lớn hơn</span>
                                 </div>
                                 <div>
                                     <label class="switch">
                                         <input type="checkbox" data-param2="showchannelname" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span>📺 Show originating channel name</span>
+                                    <span>📺 Hiện tên kênh nguồn phát</span>
                                 </div>
                                 <div>
                                     <label class="switch">
@@ -7663,48 +7663,48 @@ details.wrapper[open] > .collapsible-text {
 										<span class="range-value" id="multi-alert-beep-display">35%</span>
 									</span>
 								</div>
-								<div class="textInputContainer textInputWithUpload" style="width: 95%;">
+								<div class="textInputContainer textInputWithTải lên" style="width: 95%;">
 									<input type="text" class="textInput instant" autocomplete="off" placeholder="https://example.com/alert.wav" data-textparam25="custombeep" id="multi-alert-custombeep" />
 									<label><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="popup-custom-sound-url-all-alerts">Custom sound URL (all alerts)</span></label>
-									<button type="button" id="uploadMultiAlertSoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+									<button type="button" id="uploadMultiAlertSoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
 								</div>
 								<details style="width: 95%; margin-top: 4px;">
 									<summary style="cursor: pointer; font-size: 0.95em; padding: 6px 10px; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"><span class="popup-control-icon" aria-hidden="true">🔊</span><span data-translate="popup-per-type-custom-sounds-override-above">Per-type custom sounds (override above)</span></summary>
 									<div style="display: flex; flex-direction: column; gap: 4px; margin-top: 6px;">
-										<div class="textInputContainer textInputWithUpload" style="width: 100%;">
+										<div class="textInputContainer textInputWithTải lên" style="width: 100%;">
 											<input type="text" class="textInput instant" autocomplete="off" placeholder="Follow sound URL (.ogg, .mp3, .wav)" data-textparam25="followsound" id="multi-alert-followsound" />
 											<label><span data-translate="popup-follow-sound">💖 Follow sound</span></label>
-											<button type="button" id="uploadFollowSoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+											<button type="button" id="uploadFollowSoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
 										</div>
-										<div class="textInputContainer textInputWithUpload" style="width: 100%;">
+										<div class="textInputContainer textInputWithTải lên" style="width: 100%;">
 											<input type="text" class="textInput instant" autocomplete="off" placeholder="Sub sound URL (.ogg, .mp3, .wav)" data-textparam25="subsound" id="multi-alert-subsound" />
 											<label><span data-translate="popup-subscription-sound">💜 Subscription sound</span></label>
-											<button type="button" id="uploadSubSoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+											<button type="button" id="uploadSubSoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
 										</div>
-										<div class="textInputContainer textInputWithUpload" style="width: 100%;">
+										<div class="textInputContainer textInputWithTải lên" style="width: 100%;">
 											<input type="text" class="textInput instant" autocomplete="off" placeholder="Donation sound URL (.ogg, .mp3, .wav)" data-textparam25="donosound" id="multi-alert-donosound" />
 											<label><span data-translate="popup-donation-sound">💚 Donation sound</span></label>
-											<button type="button" id="uploadDonoSoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+											<button type="button" id="uploadDonoSoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
 										</div>
-										<div class="textInputContainer textInputWithUpload" style="width: 100%;">
+										<div class="textInputContainer textInputWithTải lên" style="width: 100%;">
 											<input type="text" class="textInput instant" autocomplete="off" placeholder="Bits sound URL (.ogg, .mp3, .wav)" data-textparam25="bitssound" id="multi-alert-bitssound" />
 											<label><span data-translate="popup-bits-cheer-sound">💙 Bits/Cheer sound</span></label>
-											<button type="button" id="uploadBitsSoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+											<button type="button" id="uploadBitsSoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
 										</div>
-										<div class="textInputContainer textInputWithUpload" style="width: 100%;">
+										<div class="textInputContainer textInputWithTải lên" style="width: 100%;">
 											<input type="text" class="textInput instant" autocomplete="off" placeholder="Raid sound URL (.ogg, .mp3, .wav)" data-textparam25="raidsound" id="multi-alert-raidsound" />
 											<label><span data-translate="popup-raid-sound">🧡 Raid sound</span></label>
-											<button type="button" id="uploadRaidSoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+											<button type="button" id="uploadRaidSoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
 										</div>
-										<div class="textInputContainer textInputWithUpload" style="width: 100%;">
+										<div class="textInputContainer textInputWithTải lên" style="width: 100%;">
 											<input type="text" class="textInput instant" autocomplete="off" placeholder="Auction win sound URL (.ogg, .mp3, .wav)" data-textparam25="auctionsound" id="multi-alert-auctionsound" />
 											<label><span data-translate="popup-auction-win-sound">💛 Auction win sound</span></label>
-											<button type="button" id="uploadAuctionSoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+											<button type="button" id="uploadAuctionSoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
 										</div>
-										<div class="textInputContainer textInputWithUpload" style="width: 100%;">
+										<div class="textInputContainer textInputWithTải lên" style="width: 100%;">
 											<input type="text" class="textInput instant" autocomplete="off" placeholder="Hype train sound URL (.ogg, .mp3, .wav)" data-textparam25="hypesound" id="multi-alert-hypesound" />
 											<label><span data-translate="popup-hype-train-sound">❤️ Hype train sound</span></label>
-											<button type="button" id="uploadHypeSoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+											<button type="button" id="uploadHypeSoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
 										</div>
 									</div>
 								</details>
@@ -7766,15 +7766,15 @@ details.wrapper[open] > .collapsible-text {
                                             <option value="auction" data-translate="popup-auction-win">Auction win</option>
                                             <option value="hype" data-translate="popup-hype-train">Hype train</option>
                                         </select>
-                                        <div class="textInputContainer textInputWithUpload" style="width: 100%;">
+                                        <div class="textInputContainer textInputWithTải lên" style="width: 100%;">
                                             <input type="text" id="multi-alert-effect1-media" class="textInput instant" data-textparam25="effect1media" placeholder="Direct GIF/image/video URL (not a Giphy page link)" autocomplete="off" />
                                             <label for="multi-alert-effect1-media" data-translate="popup-media-optional">🖼️ Media (optional)</label>
-                                            <button type="button" id="uploadMultiEffect1MediaBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+                                            <button type="button" id="uploadMultiEffect1MediaBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
                                         </div>
-                                        <div class="textInputContainer textInputWithUpload" style="width: 100%;">
+                                        <div class="textInputContainer textInputWithTải lên" style="width: 100%;">
                                             <input type="text" id="multi-alert-effect1-sound" class="textInput instant" data-textparam25="effect1sound" placeholder="Sound URL (.mp3, .ogg, .wav)" autocomplete="off" />
                                             <label for="multi-alert-effect1-sound"><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="popup-sound-url">Sound URL</span></label>
-                                            <button type="button" id="uploadMultiEffect1SoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+                                            <button type="button" id="uploadMultiEffect1SoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
                                         </div>
                                         <details class="ssn-effect-advanced"><summary data-translate="popup-amount-limits-usd">💵 Amount limits (USD)</summary>
 
@@ -7807,15 +7807,15 @@ details.wrapper[open] > .collapsible-text {
                                             <option value="auction" data-translate="popup-auction-win">Auction win</option>
                                             <option value="hype" data-translate="popup-hype-train">Hype train</option>
                                         </select>
-                                        <div class="textInputContainer textInputWithUpload" style="width: 100%;">
+                                        <div class="textInputContainer textInputWithTải lên" style="width: 100%;">
                                             <input type="text" id="multi-alert-effect2-media" class="textInput instant" data-textparam25="effect2media" placeholder="Direct GIF/image/video URL (not a Giphy page link)" autocomplete="off" />
                                             <label for="multi-alert-effect2-media" data-translate="popup-media-optional">🖼️ Media (optional)</label>
-                                            <button type="button" id="uploadMultiEffect2MediaBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+                                            <button type="button" id="uploadMultiEffect2MediaBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
                                         </div>
-                                        <div class="textInputContainer textInputWithUpload" style="width: 100%;">
+                                        <div class="textInputContainer textInputWithTải lên" style="width: 100%;">
                                             <input type="text" id="multi-alert-effect2-sound" class="textInput instant" data-textparam25="effect2sound" placeholder="Sound URL (.mp3, .ogg, .wav)" autocomplete="off" />
                                             <label for="multi-alert-effect2-sound"><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="popup-sound-url">Sound URL</span></label>
-                                            <button type="button" id="uploadMultiEffect2SoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+                                            <button type="button" id="uploadMultiEffect2SoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
                                         </div>
                                         <details class="ssn-effect-advanced"><summary data-translate="popup-amount-limits-usd">💵 Amount limits (USD)</summary>
 
@@ -7848,15 +7848,15 @@ details.wrapper[open] > .collapsible-text {
                                             <option value="auction" data-translate="popup-auction-win">Auction win</option>
                                             <option value="hype" data-translate="popup-hype-train">Hype train</option>
                                         </select>
-                                        <div class="textInputContainer textInputWithUpload" style="width: 100%;">
+                                        <div class="textInputContainer textInputWithTải lên" style="width: 100%;">
                                             <input type="text" id="multi-alert-effect3-media" class="textInput instant" data-textparam25="effect3media" placeholder="Direct GIF/image/video URL (not a Giphy page link)" autocomplete="off" />
                                             <label for="multi-alert-effect3-media" data-translate="popup-media-optional">🖼️ Media (optional)</label>
-                                            <button type="button" id="uploadMultiEffect3MediaBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+                                            <button type="button" id="uploadMultiEffect3MediaBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
                                         </div>
-                                        <div class="textInputContainer textInputWithUpload" style="width: 100%;">
+                                        <div class="textInputContainer textInputWithTải lên" style="width: 100%;">
                                             <input type="text" id="multi-alert-effect3-sound" class="textInput instant" data-textparam25="effect3sound" placeholder="Sound URL (.mp3, .ogg, .wav)" autocomplete="off" />
                                             <label for="multi-alert-effect3-sound"><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="popup-sound-url">Sound URL</span></label>
-                                            <button type="button" id="uploadMultiEffect3SoundBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Upload</span></button>
+                                            <button type="button" id="uploadMultiEffect3SoundBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span><span data-translate="popup-upload">Tải lên</span></button>
                                         </div>
                                         <details class="ssn-effect-advanced"><summary data-translate="popup-amount-limits-usd">💵 Amount limits (USD)</summary>
 
@@ -8665,7 +8665,7 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-setting="lanonly" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="allow-lan-only-p2p-connections">🖥️💻 P2P connections via LAN only </span>
+                                    <span data-translate="allow-lan-only-p2p-connections">🖥️💻 Chỉ kết nối P2P qua mạng nội bộ LAN </span>
                                 </div>
 								<hr>
 
@@ -9129,13 +9129,13 @@ details.wrapper[open] > .collapsible-text {
 
 
 								<h3><span class="popup-control-icon" aria-hidden="true">💻</span><span data-translate="custom-javascript">Custom JavaScript</span></h3>
-								<div title="Upload custom JavaScript to extend functionality">
+								<div title="Tải lên custom JavaScript to extend functionality">
 									<label class="switch">
 										<input type="checkbox" id="customJsEnabled" data-setting="customJsEnabled" />
 										<span class="slider round"></span>
 									</label>
 									<span data-translate="enable-custom-javascript">⚙️ Enable custom JavaScript </span><br>
-									<button id="uploadCustomJsButton" class="glowingButton" style="width: 160px; margin-left: 0px;" title="Upload custom JavaScript file"><span>⬆️ Upload Script</span></button>
+									<button id="uploadCustomJsButton" class="glowingButton" style="width: 160px; margin-left: 0px;" title="Tải lên custom JavaScript file"><span>⬆️ Tải lên Script</span></button>
 									<button id="deleteCustomJsButton" class="glowingButton" style="width: 160px; margin-left: 0px;" title="Delete uploaded JavaScript file"><span>⛔ Delete</span></button>
 								</div>
                                 <h3><span class="popup-control-icon" aria-hidden="true">🖼️</span><span>GIFs and stickers ? Powered By GIPHY</span></h3>
@@ -9302,7 +9302,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper beginner-basic" data-panel-section="global">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-global-message-visibility-options" />
-                    <label class="collapsible-label" for="wrapper-global-message-visibility-options"><span data-translate="message---visibility">💬 Message - 👁️ Visibility</span></label>
+                    <label class="collapsible-label" for="wrapper-global-message-visibility-options"><span data-translate="message---visibility">💬 Hiển thị Tin nhắn (Visibility)</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group">
@@ -9359,7 +9359,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span data-translate="replace-common-swear-words-with-asterixis">🤬🚫 Replace common swear words with asterixis </span>
-									<button id="uploadBadwordsButton" class="glowingButton" style="width: auto; margin-left: 0px;" title="Upload a custom list of bad words; text file only, one word per line."><span>⬆️ Upload Badwords</span></button>
+									<button id="uploadBadwordsButton" class="glowingButton" style="width: auto; margin-left: 0px;" title="Tải lên a custom list of bad words; text file only, one word per line."><span>⬆️ Tải lên Badwords</span></button>
 									<button id="deleteBadwordsButton" class="glowingButton" style="width: 160px; margin-left: 0px;" title="Delete any uploaded bad words list; the default list will be used instead."><span>⛔ Delete</span></button>
 
                                 </div>
@@ -9452,7 +9452,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper beginner-basic" data-panel-section="global">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-global-message-styling-options" />
-                    <label class="collapsible-label" for="wrapper-global-message-styling-options"><span data-translate="message---styling">💬 Message - 🎨 Styling</span></label>
+                    <label class="collapsible-label" for="wrapper-global-message-styling-options"><span data-translate="message---styling">💬 Kiểu dáng & Font chữ (Styling)</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group">
@@ -9535,7 +9535,7 @@ details.wrapper[open] > .collapsible-text {
                                 <div class="textInputContainer" style="width: 95%; position: relative;">
                                     <input type="text" id="default_avatar" class="textInput" autocomplete="off" placeholder="Default avatar image URL" data-textsetting="defaultavatar" />
                                     <label for="default_avatar"><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="default-avatar-image-url">Default avatar image URL</span></label>
-                                    <button type="button" id="uploadDefaultAvatarBtn" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); padding: 5px 10px; background: var(--upload-button-bg, #667eea); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;"><span class="popup-control-icon" aria-hidden="true">📤</span>Upload</button>
+                                    <button type="button" id="uploadDefaultAvatarBtn" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); padding: 5px 10px; background: var(--upload-button-bg, #667eea); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;"><span class="popup-control-icon" aria-hidden="true">📤</span>Tải lên</button>
                                 </div>
                             </div>
                         </div>
@@ -9547,7 +9547,7 @@ details.wrapper[open] > .collapsible-text {
 				<div class="collapsible">
 					<input type="checkbox" class="collapsible-input" id="wrapper-privhostbot-options-ext" />
 					<label class="collapsible-label" for="wrapper-privhostbot-options-ext">
-						<span data-translate="identify-hosts-blocked">🦸 Identify hosts, mods, bots, VIPs, and blocked users</span>
+						<span data-translate="identify-hosts-blocked">🦸 Nhận diện Host, Mod, Bot, VIP và người dùng bị chặn</span>
 					</label>
 					<div class="collapsible-text">
 						<div class="options">
@@ -11647,7 +11647,7 @@ details.wrapper[open] > .collapsible-text {
 								<div class="textInputContainer" style="width: 95%; position: relative;">
 									<input type="text" id="aiOverlayAvatar" class="textInput" autocomplete="off" placeholder="Optional avatar image URL" data-textsetting="aiOverlayAvatar" />
 									<label for="aiOverlayAvatar"><span class="popup-control-icon" aria-hidden="true">🔗</span>Avatar image URL</label>
-									<button type="button" id="uploadAiOverlayAvatarBtn" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); padding: 5px 10px; background: var(--upload-button-bg, #667eea); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;"><span class="popup-control-icon" aria-hidden="true">📤</span>Upload</button>
+									<button type="button" id="uploadAiOverlayAvatarBtn" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); padding: 5px 10px; background: var(--upload-button-bg, #667eea); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;"><span class="popup-control-icon" aria-hidden="true">📤</span>Tải lên</button>
 								</div>
 								<div style="margin: 8px 0;">
 									<span>Position</span>
@@ -11986,14 +11986,14 @@ details.wrapper[open] > .collapsible-text {
 										<input type="checkbox" data-param17="viewerbarbg" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="popup-custom-viewer-bar-background-color">🎨 Custom viewer bar background color</span>
+									<span data-translate="popup-custom-viewer-bar-background-color">🎨 Màu nền thanh người xem tùy chỉnh</span>
 								</div>
 								<div class="colorInputRow">
 									<div class="textInputContainer" style="width: 95%;" title="Examples: #0009, #1f2937cc, rgba(0,0,0,0.65)">
-										<input type="text" id="events_viewerbarbg" class="textInput instant" autocomplete="off" placeholder="e.g. #0009 or rgba(0,0,0,0.65)" data-textparam17="viewerbarbg" data-palette="events_viewerbarbg_palette" />
-										<label id="events_viewerbarbg_label" for="events_viewerbarbg"><span class="popup-control-icon" aria-hidden="true">🎨</span><span data-translate="popup-viewer-bar-background-color">Viewer bar background color</span></label>
+										<input type="text" id="events_viewerbarbg" class="textInput instant" autocomplete="off" placeholder="ví dụ: #0009 hoặc rgba(0,0,0,0.65)" data-textparam17="viewerbarbg" data-palette="events_viewerbarbg_palette" />
+										<label id="events_viewerbarbg_label" for="events_viewerbarbg"><span class="popup-control-icon" aria-hidden="true">🎨</span><span data-translate="popup-viewer-bar-background-color">Màu nền thanh người xem</span></label>
 									</div>
-									<input type="color" aria-labelledby="events_viewerbarbg_label" data-color="events_viewerbarbg" id="events_viewerbarbg_palette" class="colorPicker" title="Pick a viewer bar background color" />
+									<input type="color" aria-labelledby="events_viewerbarbg_label" data-color="events_viewerbarbg" id="events_viewerbarbg_palette" class="colorPicker" title="Chọn màu nền cho thanh người xem" />
 								</div>
 
 								<div>
@@ -12542,14 +12542,14 @@ details.wrapper[open] > .collapsible-text {
 										<input type="checkbox" data-param4="viewerbarbg" />
 										<span class="slider round"></span>
 									</label>
-									<span>🎨 Custom viewer bar background color</span>
+									<span>🎨 Màu nền thanh người xem tùy chỉnh</span>
 								</div>
 								<div class="colorInputRow">
 									<div class="textInputContainer" style="width: 95%;" title="Examples: #0009, #1f2937cc, rgba(0,0,0,0.65)">
-										<input type="text" id="hype_viewerbarbg" class="textInput instant" autocomplete="off" placeholder="e.g. #0009 or rgba(0,0,0,0.65)" data-textparam4="viewerbarbg" data-palette="hype_viewerbarbg_palette" />
-										<label id="hype_viewerbarbg_label" for="hype_viewerbarbg"><span class="popup-control-icon" aria-hidden="true">🎨</span>Viewer bar background color</label>
+										<input type="text" id="hype_viewerbarbg" class="textInput instant" autocomplete="off" placeholder="ví dụ: #0009 hoặc rgba(0,0,0,0.65)" data-textparam4="viewerbarbg" data-palette="hype_viewerbarbg_palette" />
+										<label id="hype_viewerbarbg_label" for="hype_viewerbarbg"><span class="popup-control-icon" aria-hidden="true">🎨</span>Màu nền thanh người xem</label>
 									</div>
-									<input type="color" aria-labelledby="hype_viewerbarbg_label" data-color="hype_viewerbarbg" id="hype_viewerbarbg_palette" class="colorPicker" title="Pick a viewer bar background color" />
+									<input type="color" aria-labelledby="hype_viewerbarbg_label" data-color="hype_viewerbarbg" id="hype_viewerbarbg_palette" class="colorPicker" title="Chọn màu nền cho thanh người xem" />
 								</div>
 								<div title="Set the overall page background color (useful for OBS docks so the page is not transparent/white). Supports hex, rgba, and named colors.">
 									<label class="switch">
@@ -12588,7 +12588,7 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param4="transparent" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="force-transparent-background">⭕ Force transparent background </span><span class="obs-transparent-note"> (OBS Browser Source is already transparent by default)</span>
+                                    <span data-translate="force-transparent-background">⭕ Buộc nền trong suốt </span><span class="obs-transparent-note"> (Nguồn trình duyệt OBS mặc định đã trong suốt)</span>
                                 </div>
                                 <div>
                                     <label class="switch">
@@ -12596,7 +12596,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span>
-                                        👻 Page opacity
+                                        👻 Độ mờ trang
                                         <input type="range" id="hype-opacity-range" min="0" max="1" step="0.05" value="0.3" style="width: 150px;" data-numbersetting4="opacity" data-range-display="hype-opacity-display" />
                                         <span class="range-value" id="hype-opacity-display">0.30</span>
                                     </span>
@@ -13599,10 +13599,10 @@ details.wrapper[open] > .collapsible-text {
                                     </label>
                                     <span><span class="popup-control-icon" aria-hidden="true">🔎</span>Fluid Goal Bar: only show the bar, with text inside</span>
                                 </div>
-                                <div class="textInputContainer textInputWithUpload" style="width: 95%;">
+                                <div class="textInputContainer textInputWithTải lên" style="width: 95%;">
                                     <label><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="custom-jar-image">Custom Jar Image URL:</span></label>
                                     <input type="text" id="streamGoalJarImage" data-optionparam12="jarimage" class="textInput" placeholder="https://example.com/jar.png" />
-                                    <button type="button" id="uploadStreamGoalJarImageBtn" class="textInputUploadButton"><span class="popup-control-icon" aria-hidden="true">📤</span>Upload</button>
+                                    <button type="button" id="uploadStreamGoalJarImageBtn" class="textInputTải lênButton"><span class="popup-control-icon" aria-hidden="true">📤</span>Tải lên</button>
                                 </div>
 
                             </div>
@@ -13791,7 +13791,7 @@ details.wrapper[open] > .collapsible-text {
                                 <div class="textInputContainer" style="width: 95%; position: relative;" title="Specify a URL for a custom sound audio file">
                                     <input type="text" id="customsound" class="textInput instant" autocomplete="off" placeholder="eg: https://www.yourdomain.com/sound.wav" data-textparam5="customsound" />
                                     <label for="customsound"><span class="popup-control-icon" aria-hidden="true">🔗</span><span data-translate="customsound">URL for custom sound audio file</span></label>
-                                    <button type="button" id="uploadWaitlistSoundBtn" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); padding: 5px 10px; background: var(--upload-button-bg, #667eea); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;"><span class="popup-control-icon" aria-hidden="true">📤</span>Upload</button>
+                                    <button type="button" id="uploadWaitlistSoundBtn" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); padding: 5px 10px; background: var(--upload-button-bg, #667eea); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;"><span class="popup-control-icon" aria-hidden="true">📤</span>Tải lên</button>
                                 </div>
                                 <div>
                                     <label class="switch">
@@ -13809,7 +13809,7 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param5="transparent" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="force-transparent-background">⭕ Force transparent background </span><span class="obs-transparent-note"> (OBS Browser Source is already transparent by default)</span>
+                                    <span data-translate="force-transparent-background">⭕ Buộc nền trong suốt </span><span class="obs-transparent-note"> (Nguồn trình duyệt OBS mặc định đã trong suốt)</span>
                                 </div>
 								<div title="Set the overall page background color (useful for OBS docks so the page is not transparent/white). Supports hex, rgba, and named colors.">
 									<label class="switch">
@@ -13831,7 +13831,7 @@ details.wrapper[open] > .collapsible-text {
                                         <span class="slider round"></span>
                                     </label>
                                     <span>
-                                        👻 Page opacity
+                                        👻 Độ mờ trang
                                         <input type="range" id="waitlist-opacity-range" min="0" max="1" step="0.05" value="0.3" style="width: 150px;" data-numbersetting5="opacity" data-range-display="waitlist-opacity-display" />
                                         <span class="range-value" id="waitlist-opacity-display">0.30</span>
                                     </span>
@@ -17456,7 +17456,7 @@ details.wrapper[open] > .collapsible-text {
 								</div>
 								<div style="margin-top: 10px;">
 									<button id="uploadTimerSoundBtn" class="glowingButton" style="width: 220px;">
-										<span>Upload Timer Sound</span>
+										<span>Tải lên Timer Sound</span>
 									</button>
 								</div>
 							</div>

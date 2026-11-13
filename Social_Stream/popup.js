@@ -12846,17 +12846,6 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 		if (addUserDisplayAliasButton) {
 			addUserDisplayAliasButton.addEventListener('click', addUserDisplayAlias);
 		}
-				addContainer.innerHTML = `
-					<input type="text" id="new${id}Type" placeholder="Source type" list="popupSourceTypesList">
-					<button id="add${id}">Add</button>
-				`;
-				
-				container.parentNode.classList.add("isolate");
-				container.parentNode.insertBefore(listContainer, container.nextSibling);
-				container.parentNode.insertBefore(addContainer, listContainer.nextSibling);
-				setupLazySourceInput(document.getElementById(`new${id}Type`));
-			}
-		});
 		
 		sourceTypes.forEach(type => {
 			try {

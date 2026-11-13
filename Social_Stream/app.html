@@ -464,7 +464,7 @@
                 <span style="font-size: 12.5px; color: #9fb3c8;">Tích hợp Voice AI Tiếng Việt cho YouTube & TikTok</span>
             </div>
 
-            <div class="workspace-subtitle">Nguồn phát đã thêm (Added Sources):</div>
+            <div class="workspace-subtitle">Nguồn phát đã thêm:</div>
 
             <div class="action-bar">
                 <button class="btn-action test-btn" onclick="testComment()">
@@ -541,9 +541,9 @@
 
             list.innerHTML = sources.map((src, index) => {
                 const icon = src.platform === 'tiktok' ? './sources/images/tiktok.png' : './sources/images/youtube.png';
-                const platformLabel = src.platform === 'tiktok' ? 'TikTok LIVE' : (src.type === 'video' ? 'YouTube Video Live' : 'YouTube Channel');
+                const platformLabel = src.platform === 'tiktok' ? 'TikTok LIVE' : (src.type === 'video' ? 'YouTube Video Trực tiếp' : 'Kênh YouTube');
                 const btnClass = src.active ? 'btn-activate active' : 'btn-activate';
-                const btnText = src.active ? '🟢 Đang chạy (Active)' : 'Kích hoạt (activate source)';
+                const btnText = src.active ? '🟢 Đang nhận bình luận' : 'Kích hoạt nguồn';
 
                 return `
                     <div class="source-card" data-index="${index}">
