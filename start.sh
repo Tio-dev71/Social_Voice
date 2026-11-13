@@ -92,7 +92,7 @@ sleep 1
 
 # 5. Khởi động trình duyệt với Extension nạp sẵn
 echo -e "${YELLOW}[4/4] Khởi động trình duyệt ứng dụng Social Voice...${NC}"
-DOCK_URL="http://127.0.0.1:9999/dock.html?session=voice"
+APP_URL="http://127.0.0.1:9999/app.html"
 
 CHROME_BIN=""
 if [ -d "/Applications/Google Chrome.app" ]; then
@@ -108,17 +108,17 @@ elif command -v chromium >/dev/null 2>&1; then
 fi
 
 if [ -n "$CHROME_BIN" ]; then
-    echo -e "      ${GREEN}✓ Khởi động trình duyệt với Extension Social Voice...${NC}"
+    echo -e "      ${GREEN}✓ Khởi động giao diện Social Voice Standalone...${NC}"
     "$CHROME_BIN" \
         --load-extension="$STREAM_DIR" \
-        "$DOCK_URL" \
+        "$APP_URL" \
         >/dev/null 2>&1 &
 else
     echo -e "      ${YELLOW}! Mở bằng trình duyệt mặc định...${NC}"
     if command -v open >/dev/null 2>&1; then
-        open "$DOCK_URL"
+        open "$APP_URL"
     elif command -v xdg-open >/dev/null 2>&1; then
-        xdg-open "$DOCK_URL"
+        xdg-open "$APP_URL"
     fi
 fi
 

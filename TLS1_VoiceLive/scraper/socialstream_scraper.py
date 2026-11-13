@@ -171,6 +171,9 @@ class SocialStreamBridge:
 
         if self.static_dir and os.path.isdir(self.static_dir):
             async def handle_root(request):
+                app_path = os.path.join(self.static_dir, "app.html")
+                if os.path.exists(app_path):
+                    return web.FileResponse(app_path)
                 dock_path = os.path.join(self.static_dir, "dock.html")
                 if os.path.exists(dock_path):
                     return web.FileResponse(dock_path)

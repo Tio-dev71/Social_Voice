@@ -70,7 +70,7 @@ timeout /t 2 >nul
 
 :: 5. Khởi động trình duyệt
 echo [4/4] Khởi động trình duyệt với Extension nạp sẵn...
-set "DOCK_URL=http://127.0.0.1:9999/dock.html?session=voice"
+set "APP_URL=http://127.0.0.1:9999/app.html"
 set "CHROME_BIN="
 
 if exist "%ProgramFiles%\Google\Chrome\Application\chrome.exe" (
@@ -87,10 +87,10 @@ if exist "%ProgramFiles%\Google\Chrome\Application\chrome.exe" (
 
 if defined CHROME_BIN (
     echo       Khởi động trình duyệt với Extension Social Voice...
-    start "" "%CHROME_BIN%" --load-extension="%STREAM_DIR%" "%DOCK_URL%"
+    start "" "%CHROME_BIN%" --load-extension="%STREAM_DIR%" "%APP_URL%"
 ) else (
     echo       Mở bằng trình duyệt mặc định...
-    start "" "%DOCK_URL%"
+    start "" "%APP_URL%"
 )
 
 echo.
