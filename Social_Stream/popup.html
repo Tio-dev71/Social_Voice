@@ -599,16 +599,29 @@ html.popup-initializing body {
     display: none;
 }
 
+html,
 html.extension-popup-surface {
+    height: 100%;
+    min-height: 100%;
     overflow: hidden;
+    background-color: var(--body-background-color, #0d1117);
 }
 
-html.extension-popup-surface body {
-    max-height: 600px;
-    overflow-y: auto;
+body,
+html.extension-popup-surface body,
+body.ssapp {
+    min-width: 0;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    max-height: none !important;
+    overflow-y: auto !important;
     overflow-x: hidden;
     scroll-padding-top: 2em;
     scroll-behavior: smooth;
+    box-sizing: border-box;
+    background-color: var(--body-background-color, #0d1117);
+    padding-bottom: 50px;
 }
 
 body {
@@ -2517,7 +2530,7 @@ details.wrapper[open] > .collapsible-text {
     <body>
         <button class="showalways" id="disableButton">
             <span id="disableButtonText" data-translate="toggle-on-off">
-                Toggle On/Off
+                ⚡ Dịch vụ đang hoạt động
             </span>
             <label class="switch">
                 <input type="checkbox" id="extensionState" />
@@ -2526,7 +2539,7 @@ details.wrapper[open] > .collapsible-text {
         </button>
         <div class="sticky-action-row top-35">
             <button class="glowingButton showalways" style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; box-sizing: border-box; padding: 0;" data-action="fakemsg">
-                <span data-translate="trigger-fake-message">Test message</span>
+                <span data-translate="trigger-fake-message">Tin nhắn kiểm tra</span>
             </button>
             <button
                 class="glowingButton showalways"
@@ -2534,23 +2547,23 @@ details.wrapper[open] > .collapsible-text {
                 data-action="cleardock"
                 title="Clears messages in the dock, excluding pinned messages. Hold CTRL while clicking to clear pinned messages as well."
             >
-                <span data-translate="clear-all-messages">Clear All</span>
+                <span data-translate="clear-all-messages">Xóa tất cả</span>
             </button>
         </div>
         <div id="popupSearchToolbar">
-            <input type="search" id="searchInput" placeholder="Search settings..." aria-label="Search all settings" />
+            <input type="search" id="searchInput" placeholder="Tìm kiếm cài đặt..." aria-label="Tìm kiếm cài đặt" />
             <button type="button" id="activeIcon" class="popup-icon-button showalways" aria-pressed="false" title="Show only enabled options" aria-label="Show only enabled options">🔰</button>
             <button type="button" id="customizePanel" class="popup-icon-button showalways" aria-haspopup="dialog" title="Customize panel" aria-label="Customize panel"><span aria-hidden="true">🔧</span></button>
             <button type="button" id="languageIcon" class="popup-icon-button showalways" title="Select language" aria-label="Select language">🌐</button>
             <div id="panelPreviewNotice" hidden role="status"><span id="panelPreviewText"></span> <button type="button" id="hidePanelPreview" class="popup-secondary-button showalways" data-translate="hide-again">Hide again</button></div>
             <!-- Each tab lists the data-panel-section IDs it shows; unlisted sections fall back to the last tab. -->
             <div id="popupTabs" role="tablist" aria-label="Feature categories">
-                <button type="button" role="tab" id="popup-tab-chat" class="popup-tab showalways" data-popup-tab-sections="dock chatoverlaytemplate overlay"><span class="popup-tab-icon" aria-hidden="true">💬</span><span data-translate="popup-tab-chat">Chat</span></button>
-                <button type="button" role="tab" id="popup-tab-alerts" class="popup-tab showalways" data-popup-tab-sections="multialerts eventsdashboard hypemeter reactions emoteswall ticker credits meta"><span class="popup-tab-icon" aria-hidden="true">🚨</span><span data-translate="popup-tab-alerts">Alerts</span></button>
-                <button type="button" role="tab" id="popup-tab-interactive" class="popup-tab showalways" data-popup-tab-sections="poll giveaway waitlist games wordcloud map leaderboard scoreboard custom-gif-commands timer spotify"><span class="popup-tab-icon" aria-hidden="true">🎮</span><span data-translate="popup-tab-interactive">Interactive</span></button>
-                <button type="button" role="tab" id="popup-tab-money" class="popup-tab showalways" data-popup-tab-sections="tipjar monetization"><span class="popup-tab-icon" aria-hidden="true">💰</span><span data-translate="popup-tab-money">Money</span></button>
-                <button type="button" role="tab" id="popup-tab-bots" class="popup-tab showalways" data-popup-tab-sections="ai flowactions"><span class="popup-tab-icon" aria-hidden="true">🤖</span><span data-translate="popup-tab-bots">Bots &amp; AI</span></button>
-                <button type="button" role="tab" id="popup-tab-settings" class="popup-tab showalways" data-popup-tab-sections="global"><span class="popup-tab-icon" aria-hidden="true">🧰</span><span data-translate="popup-tab-settings">Settings</span></button>
+                <button type="button" role="tab" id="popup-tab-chat" class="popup-tab showalways" data-popup-tab-sections="dock chatoverlaytemplate overlay"><span class="popup-tab-icon" aria-hidden="true">💬</span><span data-translate="popup-tab-chat">Trò chuyện</span></button>
+                <button type="button" role="tab" id="popup-tab-alerts" class="popup-tab showalways" data-popup-tab-sections="multialerts eventsdashboard hypemeter reactions emoteswall ticker credits meta"><span class="popup-tab-icon" aria-hidden="true">🚨</span><span data-translate="popup-tab-alerts">Cảnh báo</span></button>
+                <button type="button" role="tab" id="popup-tab-interactive" class="popup-tab showalways" data-popup-tab-sections="poll giveaway waitlist games wordcloud map leaderboard scoreboard custom-gif-commands timer spotify"><span class="popup-tab-icon" aria-hidden="true">🎮</span><span data-translate="popup-tab-interactive">Tương tác</span></button>
+                <button type="button" role="tab" id="popup-tab-money" class="popup-tab showalways" data-popup-tab-sections="tipjar monetization"><span class="popup-tab-icon" aria-hidden="true">💰</span><span data-translate="popup-tab-money">Tiền tệ</span></button>
+                <button type="button" role="tab" id="popup-tab-bots" class="popup-tab showalways" data-popup-tab-sections="ai flowactions"><span class="popup-tab-icon" aria-hidden="true">🤖</span><span data-translate="popup-tab-bots">Bot &amp; AI</span></button>
+                <button type="button" role="tab" id="popup-tab-settings" class="popup-tab showalways" data-popup-tab-sections="global"><span class="popup-tab-icon" aria-hidden="true">🧰</span><span data-translate="popup-tab-settings">Cài đặt</span></button>
             </div>
         </div>
         <dialog id="panelEditor" class="popup-settings-panel" aria-labelledby="panelEditorTitle" aria-describedby="panelEditorDescription">
@@ -2643,11 +2656,11 @@ details.wrapper[open] > .collapsible-text {
             <!-- Keep each feature's heading, links, and control groups on the same data-panel-section ID. -->
             <div class="link beginner-basic" title="This link will display chat messages as a streaming list. Use as an overlay or as a control dock." data-panel-section="dock">
                 <h2 class="streaming_chat_title">
-                    <span class="title-group"><span class="emoji" aria-hidden="true">💬</span><span data-translate="main-chat-overlay-control-dock">Main chat overlay &amp; control dock</span> </span>
+                    <span class="title-group"><span class="emoji" aria-hidden="true">💬</span><span data-translate="main-chat-overlay-control-dock">Khung chat chính &amp; Bảng điều khiển (Dock)</span> </span>
 					<span class="heading-actions">
-						<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
-						<button type="button" class="edit-link rounded_area" title="Load an existing Main Chat link for editing" data-edit-link="dock" data-translate="popup-edit-link">Edit link</button>
-						<button type="button" id="copy-stream-id" class="copy-link rounded_area" title="Copy your stream ID (session ID) to the clipboard" aria-live="polite"><span data-translate="streamdeck-copy-session">Copy ID</span></button>
+						<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
+						<button type="button" class="edit-link rounded_area" title="Chỉnh sửa link" data-edit-link="dock" data-translate="popup-edit-link">Sửa link</button>
+						<button type="button" id="copy-stream-id" class="copy-link rounded_area" title="Sao chép Session ID" aria-live="polite"><span data-translate="streamdeck-copy-session">Sao chép ID</span></button>
 						<label for="help-dock" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
 					</span>
                 </h2>
@@ -2677,7 +2690,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="wrapper beginner-basic" data-panel-section="dock">
                 <div class="collapsible">
                     <input type="checkbox" class="collapsible-input" id="wrapper-chat-menu-options" />
-                    <label class="collapsible-label" for="wrapper-chat-menu-options"><span data-translate="menu">🎚️ Bottom Dock Menu Bar</span></label>
+                    <label class="collapsible-label" for="wrapper-chat-menu-options"><span data-translate="menu">🎚️ Thanh menu Dock dưới</span></label>
                     <div class="collapsible-text">
                         <div class="options">
                             <div class="options_group streaming_chat">
@@ -3332,13 +3345,13 @@ details.wrapper[open] > .collapsible-text {
 
 							<!-- Global TTS Behavior Options -->
 							<div class="options_group tts-behavior-options">
-								<h4><span class="popup-control-icon" aria-hidden="true">🔊</span><span data-translate="tts-behaviors">TTS Behaviors</span></h4>
+								<h4><span class="popup-control-icon" aria-hidden="true">🔊</span><span data-translate="tts-behaviors">Hành vi đọc giọng nói (TTS)</span></h4>
 								<div data-keywords="simple tts phrasing wording shorten speech intro says">
 									<label class="switch">
 										<input type="checkbox" data-param1="simpletts" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="do-not-say-says-or-someone-says-with-tts">🚫🗣️ Do not say "says" or "someone says" with TTS </span>
+									<span data-translate="do-not-say-says-or-someone-says-with-tts">🚫🗣️ Không đọc "nói" hoặc "ai đó nói" khi đọc giọng nói </span>
 								</div>
 
 								<div data-keywords="urls links address spelled out pronounce hyperlink">
@@ -3346,7 +3359,7 @@ details.wrapper[open] > .collapsible-text {
 										<input type="checkbox" data-param1="readouturls" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="read-out-urls">🗣️ Read out URLs rather than saying "link". </span>
+									<span data-translate="read-out-urls">🗣️ Đọc toàn bộ URL thay vì nói "liên kết". </span>
 								</div>
 								<!-- Command Controls -->
 								<div title="Only what is written AFTER the !say command is read out. It's read out regardless of whether tts is turned on elsewhere or not." data-keywords="tts command trigger say keyword macro custom phrase chat control">
@@ -3360,7 +3373,7 @@ details.wrapper[open] > .collapsible-text {
 											title="You need to include the ! if you want it" style="width:36px" /> will be read out
 									</span>
 									<br>
-									<i>Please note, you will want to disable the top "Text-to-speech all incoming messages" option if wanting to use this option</i>
+									<i data-translate="ttscommand-note">Lưu ý: Bạn nên tắt tùy chọn "Đọc toàn bộ tin nhắn đến bằng giọng nói" ở trên nếu muốn dùng tính năng này</i>
 									<br><br>
 
 								</div>
@@ -3370,7 +3383,7 @@ details.wrapper[open] > .collapsible-text {
 										<input type="checkbox" data-param1="ttscommandmembersonly" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="membersttscommand">🤴 Only members can use the TTS command</span>
+									<span data-translate="membersttscommand">🤴 Chỉ hội viên / thành viên kênh mới được dùng lệnh TTS</span>
 								</div>
 
 								<div data-keywords="no reflections echo avoid duplicates prevent reply playback self monitoring">
@@ -3378,51 +3391,51 @@ details.wrapper[open] > .collapsible-text {
 										<input type="checkbox" data-param1="norelfectionstts" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="do-not-read-out-reflections">🚫➿ Do not read out reflections (your replies)</span>
+									<span data-translate="do-not-read-out-reflections">🚫➿ Không đọc tin nhắn phản hồi của chính bạn (reflections)</span>
 								</div>
 								<div>
 									<div class="textInputContainer" style="width: 95%;" title="Only allow TTS from specific sources">
-                                    <input type="text" id="ttssources" class="textInput instant" autocomplete="off" placeholder="eg: youtube,tiktok" data-textparam1="ttssources" />
-                                    <label for="ttssources"><span class="popup-control-icon" aria-hidden="true">🔊</span><span data-translate="ttssources">Source(s) to allow TTS</span></label>
+                                    <input type="text" id="ttssources" class="textInput instant" autocomplete="off" placeholder="ví dụ: youtube,tiktok" data-textparam1="ttssources" />
+                                    <label for="ttssources"><span class="popup-control-icon" aria-hidden="true">🔊</span><span data-translate="ttssources">Nguồn livestream được phép đọc TTS (vd: youtube,tiktok)</span></label>
                                 </div>
 								</div>
 							</div>
 							<div class="options_group tts-behavior-options">
-								<h4><span class="popup-control-icon" aria-hidden="true">🔎</span><span data-translate="tts-read-specific">Read out only specific user/messages</span></h4>
+								<h4><span class="popup-control-icon" aria-hidden="true">🔎</span><span data-translate="tts-read-specific">Chỉ đọc tin nhắn của đối tượng cụ thể</span></h4>
 								<div title="Only 'bot' marked users will have messages read out." data-keywords="bot only automation commands stream elements nightbot restrict">
 									<label class="switch">
 										<input type="checkbox" data-param1="bottts" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="bottts">🤖 Only bot marked users can have messages read</span>
+									<span data-translate="bottts">🤖 Chỉ người dùng được đánh dấu Bot mới được đọc tin nhắn</span>
 								</div>
 								<div title="Only 'mod' marked users will have messages read out." data-keywords="moderator trusted staff limited allowlist">
 									<label class="switch">
 										<input type="checkbox" data-param1="modtts" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="modtts">👩‍🏫 Only specific mods can have messages read</span>
+									<span data-translate="modtts">👩‍🏫 Chỉ Quản trị viên (Mod) mới được đọc tin nhắn</span>
 								</div>
 								<div title="Only 'member' marked users will have messages read out." data-keywords="member supporter subscription loyalty club">
 									<label class="switch">
 										<input type="checkbox" data-param1="membertts" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="membertts">🤴 Only members can have messages read</span>
+									<span data-translate="membertts">🤴 Chỉ Hội viên / Thành viên kênh mới được đọc tin nhắn</span>
 								</div>
 								<div title="Only 'vip' marked users will have messages read out." data-keywords="vip priority star featured badge elite">
 									<label class="switch">
 										<input type="checkbox" data-param1="viptts" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="viptts">⭐ Only VIP marked users can have messages read </span>
+									<span data-translate="viptts">⭐ Chỉ người dùng VIP mới được đọc tin nhắn </span>
 								</div>
 								<div title="Only 'privilleged' marked users will have messages read out." data-keywords="admin privileged producer staff host controller">
 									<label class="switch">
 										<input type="checkbox" data-param1="admintts" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="admintts">👑 Only privilleged users can have messages read</span>
+									<span data-translate="admintts">👑 Chỉ người dùng có đặc quyền mới được đọc tin nhắn</span>
 								</div>
 								<div title="Only 'host' marked users will have messages read out." data-keywords="host cohost presenter mc master of ceremonies">
 									<label class="switch">
@@ -5485,8 +5498,8 @@ details.wrapper[open] > .collapsible-text {
 
             <div class="link beginner-basic" title="Ready-made OBS browser-source chat overlays." data-panel-section="chatoverlaytemplate">
                 <h2 class="chat_overlay_template_title">
-                    <span class="title-group"><span class="emoji" aria-hidden="true">🎨</span><span data-translate="pre-styled-chat-overlays">Pre-styled chat overlays</span> </span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+                    <span class="title-group"><span class="emoji" aria-hidden="true">🎨</span><span data-translate="pre-styled-chat-overlays">Mẫu giao diện Chat đẹp mắt</span> </span>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
                 </h2>
 				<small class="beginner-section-note" data-translate="pre-styled-chat-timing-note">Ready-made chat looks for OBS. Set auto-hide timing below in Overlay Theme Options. Switch to full mode for deeper styling controls.</small>
                 <div id="chatoverlaytemplate" data-raw="" class="streaming_chat"></div>
@@ -5565,7 +5578,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="link beginner-basic" title="This link will only show selected messages, one at a time. Requires the dock to select messages." data-panel-section="overlay">
                 <h2 class="featured_chat_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">🌟</span><span data-translate="featured-chat-overlay">Featured chat overlay </span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="overlay" title="Load an existing link for this overlay" data-translate="popup-edit-link">Edit link</button>
 					<label for="help-featured" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -5892,7 +5905,7 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param2="simpletts" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="do-not-say-says-or-someone-says-with-tts">🚫🗣️ Do not say "says" or "someone says" with TTS </span>
+                                    <span data-translate="do-not-say-says-or-someone-says-with-tts">🚫🗣️ Không đọc "nói" hoặc "ai đó nói" khi đọc giọng nói </span>
                                 </div>
 
                                 <div>
@@ -5900,7 +5913,7 @@ details.wrapper[open] > .collapsible-text {
                                         <input type="checkbox" data-param2="readouturls" />
                                         <span class="slider round"></span>
                                     </label>
-                                    <span data-translate="read-out-urls">🗣️ Read out URLs rather than saying "link". </span>
+                                    <span data-translate="read-out-urls">🗣️ Đọc toàn bộ URL thay vì nói "liên kết". </span>
                                 </div>
                                 <div title="The volume has a max of 1.0 (100%)">
                                     <label class="switch">
@@ -6924,7 +6937,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link beginner-basic" title="Dedicated multi-stream alert overlay for follows, subscriptions, donations, cheers, and raids." data-panel-section="multialerts">
 				<h2 class="multi_alert_title">
 					<span class="title-group"><span class="emoji" aria-hidden="true">🚨</span><span data-translate="popup-multi-stream-alert-box">Multi-Stream Alert Box</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="multialerts" title="Load an existing link for this overlay" data-translate="popup-edit-link">Edit link</button>
 				</h2>
 				<small class="beginner-section-note" data-translate="popup-shows-follows-subs-donations-bits-and-raids-as-alert-popups-plus-optional-a">Shows follows, subs, donations, bits, and raids as alert popups, plus optional auction winner and hype train alerts. Use the sections below for common alert controls.</small>
@@ -10706,7 +10719,7 @@ details.wrapper[open] > .collapsible-text {
 										<input type="checkbox" data-param10="readouturls" />
 										<span class="slider round"></span>
 									</label>
-									<span data-translate="read-out-urls">🗣️ Read out URLs rather than saying "link". </span>
+									<span data-translate="read-out-urls">🗣️ Đọc toàn bộ URL thay vì nói "liên kết". </span>
 								</div>
 								<div>
 									<label class="switch">
@@ -11661,7 +11674,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Monitor donation events and activity in real-time" data-panel-section="eventsdashboard">
 				<h2 class="events_dashboard_title">
 					<span class="title-group"><span class="emoji" aria-hidden="true">📊</span><span data-translate="eventsdashboard">Activity Feed / Events</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="eventsdashboard" title="Load an existing link for this overlay" data-translate="popup-edit-link">Edit link</button>
 					<label for="help-events" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
 				</h2>
@@ -12065,7 +12078,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Reaction-only overlay for floating hearts, thumbs, and similar live reactions." data-panel-section="reactions">
 				<h2 class="reactions_title">
 					<span class="title-group"><span class="emoji" aria-hidden="true">💖</span><span data-translate="popup-reactions-overlay">Reactions Overlay</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="reactions" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-reactions" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
 				</h2>
@@ -12209,7 +12222,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="link" title="This link will only show the inbound emotes, bouncing them around the full page." data-panel-section="emoteswall">
                 <h2 class="emotes_wall_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">😄</span><span data-translate="emotes-wall">Emotes wall </span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="emoteswall" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-emotes" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -12371,7 +12384,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="link" title="This link shows a score for recent chat activity per chat source" data-panel-section="hypemeter">
 				<h2 class="hype_mode_title">
 					<span class="title-group"><span class="emoji" aria-hidden="true">🔥</span><span data-translate="viewer-count-and-chat-activity-overlay">Viewer Count &amp; Chat Activity Overlay</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="hypemeter" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-hype" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -12747,7 +12760,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Meta data bar for auction, commerce, and giveaway-style status updates" data-panel-section="meta">
 				<h2 class="meta_mode_title">
 					<span class="title-group"><span class="emoji" aria-hidden="true">📦</span><span data-translate="popup-meta-data-bar">Meta Data Bar</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="meta" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-meta" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
 				</h2>
@@ -13117,7 +13130,7 @@ details.wrapper[open] > .collapsible-text {
 <div class="link" title="This link shows a tally of donations recieved" data-panel-section="tipjar">
 				<h2 class="tipjar_title">
 					<span class="title-group"><span class="emoji" aria-hidden="true">💰</span><span data-translate="tipjar">Tip Jar and Goal Meter</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="tipjar" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-tipjar" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -13623,7 +13636,7 @@ details.wrapper[open] > .collapsible-text {
             <div class="link" title="This link shows a list of names representing users in a waiting list" data-panel-section="waitlist">
                 <h2 class="waitlist_mode_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">🏆</span><span data-translate="wait-list">Wait List / Winner Draw</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="waitlist" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-waitlist" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -13936,7 +13949,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Flow Actions Overlay Page" data-panel-section="flowactions">
                 <h2 class="flowactions_mode_title">
                     <span data-translate="flowactions">🔄 Flow actions</span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="flowactions" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-flowactions" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -14644,7 +14657,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Giveaway Tool" data-panel-section="giveaway">
                 <h2 class="giveaway_mode_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">🎁</span><span data-translate="giveaway">Giveaway Tool</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="giveaway" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-giveaway" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -14743,7 +14756,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Polling system" data-panel-section="poll">
                 <h2 class="poll_mode_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">🗳️</span><span data-translate="pollmeter">Graphical Poll </span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="poll" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-poll" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -14890,7 +14903,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Mapping system" data-panel-section="map">
                 <h2 class="map_mode_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">🗺️</span><span data-translate="mapmeter">User Map </span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="map" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-map" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -15082,7 +15095,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="End credits roll" data-panel-section="credits">
                 <h2 class="credits_mode_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">🎬</span><span data-translate="creditsmeter">Credits roll</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="credits" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-credits" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
 				</h2>
@@ -15318,7 +15331,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Interactive leaderboard display" data-panel-section="leaderboard">
                 <h2 class="leaderboard_mode_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">🏅</span><span data-translate="leaderboardmeter">Leaderboard</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="leaderboard" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-leaderboard" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
 				</h2>
@@ -15594,7 +15607,7 @@ details.wrapper[open] > .collapsible-text {
                                 <div class="link" title="Points system scoreboard display" data-panel-section="scoreboard">
 				<h2 class="scoreboard_mode_title">
 					<span class="title-group"><span class="emoji" aria-hidden="true">🧮</span><span data-translate="scoreboard">Scoreboard</span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="scoreboard" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-scoreboard" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
 				</h2>
@@ -16530,7 +16543,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Interactive Games" data-panel-section="games">
 				<h2 class="games_mode_title">
 					<span data-translate="interactive-games">🎮 Interactive Games</span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<label for="help-games" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
 				</h2>
 				<input type="checkbox" id="help-games" class="link-help-toggle">
@@ -16954,7 +16967,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Customizable ticker banner bar" data-panel-section="ticker">
                 <h2 class="ticker_mode_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">📰</span><span data-translate="tickermeter">Ticker </span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="ticker" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-ticker" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -17145,7 +17158,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Word cloud overlay" data-panel-section="wordcloud">
                 <h2 class="wordcloud_mode_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">☁️</span><span data-translate="wordcloudmeter">Word Cloud </span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="wordcloud" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-wordcloud" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
                 </h2>
@@ -17245,7 +17258,7 @@ details.wrapper[open] > .collapsible-text {
 			<div class="link" title="Custom GIF Commands" data-panel-section="custom-gif-commands">
                 <h2 class="custom_gif_commands_title">
                     <span class="title-group"><span class="emoji" aria-hidden="true">🖼️</span><span data-translate="custom-gif-commands">Custom GIF Commands </span></span>
-					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Copy link to clipboard" data-copy="true"><span data-translate="copy">Copy link</span></button>
+					<button type="button" aria-live="polite" class="copy-link rounded_area" title="Sao chép link vào clipboard" data-copy="true"><span data-translate="copy">Sao chép link</span></button>
 					<button type="button" class="edit-link rounded_area" data-edit-link="custom-gif-commands" title="Load an existing link for this overlay">Edit link</button>
 					<label for="help-gif" class="help-link rounded_area" tabindex="0" role="button" title="Click for detailed help">?</label>
 				</h2>

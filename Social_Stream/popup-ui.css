@@ -1,6 +1,28 @@
 /* Popup-wide control styles. Keep provider panels on these same tokens. */
 /* SSApp embeds this menu in panels narrower than the extension popup. */
-body.ssapp { min-width:0; }
+html,
+html.extension-popup-surface {
+    height: 100% !important;
+    min-height: 100% !important;
+    overflow: hidden !important;
+    background-color: var(--body-background-color, #0d1117) !important;
+}
+
+body,
+html.extension-popup-surface body,
+body.ssapp {
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    background-color: var(--body-background-color, #0d1117) !important;
+    box-sizing: border-box !important;
+    padding-bottom: 50px !important;
+}
+
 .timer-playback { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
 .timer-playback .glowingButton { flex:1; }
 .timer-actions { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin-bottom:12px; }

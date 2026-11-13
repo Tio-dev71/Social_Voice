@@ -52,11 +52,13 @@ function refreshPopupSettingsAfterLanguageSave() {
 	return true;
 }
 
-function applyPopupTranslationLanguageImmediately(lang) {
-	const normalized = normalizePopupTranslationLanguage(lang);
+function applyPopupTranslationLanguageImmediately(lang, force = false) {
+	const normalized = normalizePopupTranslationLanguage(lang) || "vi";
 	if (!normalized || typeof fetch !== "function") return false;
-	if (requestedImmediateTranslationLanguage === normalized) return true;
-	if (!requestedImmediateTranslationLanguage && appliedImmediateTranslationLanguage === normalized) return true;
+	if (!force) {
+		if (requestedImmediateTranslationLanguage === normalized) return true;
+		if (!requestedImmediateTranslationLanguage && appliedImmediateTranslationLanguage === normalized && translation && Object.keys(translation).length > 0) return true;
+	}
 	requestedImmediateTranslationLanguage = normalized;
 	const applyToken = `${normalized}:${Date.now()}:${Math.random()}`;
 	latestExternalTranslationApply = applyToken;
@@ -1518,20 +1520,13 @@ function miniTranslate(ele, ident = false, direct=false) {
 	if (ele === document.body && window.updateMonetizationLanguage) window.updateMonetizationLanguage();
 }
 
-if (urlParams.has("ln")) {
-	const initialExternalLanguage = normalizePopupTranslationLanguage(urlParams.get("ln"));
-	const initialLanguageSelect = document.querySelector('select[data-optionsetting="translationlanguage"]');
-	if (initialExternalLanguage && initialLanguageSelect) {
-		initialLanguageSelect.value = initialExternalLanguage;
-		applyPopupTranslationLanguageImmediately(initialExternalLanguage);
-	}
-} else {
-	const initialLanguageSelect = document.querySelector('select[data-optionsetting="translationlanguage"]');
-	if (initialLanguageSelect && (!initialLanguageSelect.value || initialLanguageSelect.value === "")) {
-		initialLanguageSelect.value = "vi";
-		applyPopupTranslationLanguageImmediately("vi");
-	}
+// Social Voice always defaults to Vietnamese ('vi')
+const initialExternalLanguage = normalizePopupTranslationLanguage(urlParams.get("ln") || "vi") || "vi";
+const initialLanguageSelect = document.querySelector('select[data-optionsetting="translationlanguage"]');
+if (initialLanguageSelect) {
+	initialLanguageSelect.value = initialExternalLanguage;
 }
+applyPopupTranslationLanguageImmediately(initialExternalLanguage, true);
 
 function isFontAvailable(fontName) {
     let canvas = document.createElement("canvas");
@@ -4924,12 +4919,14 @@ function update(response, sync = true) {
 
 				syncCreditsControlUi();
 
-                if ("translation" in response.settings) {
+                if ("translation" in response.settings && response.settings["translation"]) {
                     translation = response.settings["translation"];
                     applyPopupTextDirection(
                         response.settings.translationlanguage && response.settings.translationlanguage.optionsetting
                     );
-                    miniTranslate(document.body); // Assuming miniTranslate is defined
+                    miniTranslate(document.body);
+                } else {
+                    applyPopupTranslationLanguageImmediately(urlParams.get("ln") || "vi", true);
                 }
 
                 createTabsFromSettings(response); // Assuming createTabsFromSettings is defined
@@ -12849,36 +12846,6 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 		if (addUserDisplayAliasButton) {
 			addUserDisplayAliasButton.addEventListener('click', addUserDisplayAlias);
 		}
-		document.getElementById('newUserDisplayAliasDisplayName')?.addEventListener('keypress', function(e) {
-			if (e.key === 'Enter') {
-				e.preventDefault();
-				addUserDisplayAlias();
-			}
-		});
-		updateUserDisplayAliasesList();
-		
-	} catch(e){
-		console.error(e);
-	}
-
-	try {
-		
-		const textInputs = document.querySelectorAll('.textInputContainer');
-		textInputs.forEach(container => {
-			const input = container.querySelector('.textInput');
-			if (!input) return;
-			
-			const id = input.id;
-			if (sourceTypes.includes(id)) {
-				input.classList.add('hidden');
-				
-				const listContainer = document.createElement('div');
-				listContainer.className = 'source-list-container';
-				listContainer.id = `${id}List`;
-				
-				const addContainer = document.createElement('div');
-				addContainer.className = 'add-source-container';
-				
 				addContainer.innerHTML = `
 					<input type="text" id="new${id}Type" placeholder="Source type" list="popupSourceTypesList">
 					<button id="add${id}">Add</button>
@@ -14657,6 +14624,10 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 		let savedSettings = {};
 		try { savedSettings = JSON.parse(localStorage.getItem("settings") || "{}"); } catch(e){}
 		let savedSession = localStorage.getItem("streamID") || localStorage.getItem("ssninja_stream_id") || "voice";
+		
+		const activeLang = normalizePopupTranslationLanguage(urlParams.get("ln") || (savedSettings.translationlanguage && savedSettings.translationlanguage.optionsetting) || "vi") || "vi";
+		applyPopupTranslationLanguageImmediately(activeLang, true);
+
 		let fallbackResponse = {
 			streamID: savedSession,
 			state: true,
